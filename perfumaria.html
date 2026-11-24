@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore a seleção demonstrativa de fragrâncias do Studio Milana Pirre. Encontre seu perfume por categoria, notas e intensidade.">
+  <meta name="theme-color" content="#FAF9F6"><title>Perfumaria — Studio Milana Pirre</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="assets/css/commerce.css">
+  <script defer src="assets/js/config.js"></script><script defer src="assets/js/data.js"></script><script defer src="assets/js/app.js"></script><script defer src="assets/js/commerce.js"></script>
+</head>
+<body data-page="perfumaria">
+  <div id="site-header"></div>
+  <main id="main">
+    <div class="container"><nav class="breadcrumb" aria-label="Caminho da página"><a href="index.html">Início</a><span aria-hidden="true">/</span><span aria-current="page">Perfumaria</span></nav></div>
+    <section class="catalog-intro container" aria-labelledby="catalog-title">
+      <div><h1 id="catalog-title">Sua presença,<br>em uma fragrância.</h1><p>Explore notas, descubra afinidades e encontre um perfume que converse com você.</p></div>
+      <div class="catalog-intro-image"><img src="https://images.pexels.com/photos/8166566/pexels-photo-8166566.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Composição editorial ilustrativa de perfume sobre pedra clara" width="900" height="600" fetchpriority="high"></div>
+    </section>
+    <section class="container catalog-section" aria-label="Catálogo de perfumes">
+      <div class="category-tabs" id="category-tabs" role="group" aria-label="Categorias de perfumes"></div>
+      <div class="catalog-toolbar">
+        <form id="catalog-search" class="catalog-search" role="search"><label class="visually-hidden" for="product-search">Buscar perfumes por nome ou notas</label><input id="product-search" name="q" type="search" placeholder="Busque um perfume ou uma nota" autocomplete="off"><button type="submit" class="icon-button" aria-label="Buscar perfumes" id="catalog-search-button"></button></form>
+        <div class="catalog-sort"><label for="product-sort">Ordenar por</label><select id="product-sort"><option value="featured">Seleção do studio</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option><option value="name">Nome: A a Z</option></select></div>
+      </div>
+      <div class="catalog-body">
+        <details class="catalog-filters" id="catalog-filters" open><summary><span>Filtrar perfumes</span><span id="filter-symbol" aria-hidden="true"></span></summary><div class="filter-content">
+          <fieldset><legend>Família olfativa</legend><div id="family-filters"></div></fieldset>
+          <div class="field"><label for="price-filter">Faixa de preço demonstrativo</label><select id="price-filter"><option value="all">Todos os valores</option><option value="350">Até R$ 350</option><option value="450">Até R$ 450</option><option value="550">Até R$ 550</option></select></div>
+          <button type="button" class="text-link filter-reset" id="reset-filters">Limpar filtros</button>
+        </div></details>
+        <div class="catalog-results"><div class="results-meta"><p id="results-count" role="status" aria-live="polite"></p><span>Catálogo demonstrativo</span></div><div class="product-grid" id="catalog-grid"></div><div class="catalog-empty empty-state" id="catalog-empty" hidden><h2>Nenhuma fragrância por aqui.</h2><p>Experimente outra busca ou remova os filtros para explorar toda a seleção.</p><button class="btn btn-outline" type="button" id="reset-empty">Ver todos os perfumes</button></div></div>
+      </div>
+      <p class="demo-note catalog-disclaimer">Produtos, imagens, notas e preços fictícios, criados exclusivamente para demonstrar a experiência da loja. Não representam produtos oficiais de marcas conhecidas.</p>
+    </section>
+    <noscript><p class="container">Ative o JavaScript para usar busca, filtros e a sacola nesta demonstração.</p></noscript>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
