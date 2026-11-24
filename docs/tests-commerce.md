@@ -2,8 +2,6 @@
 
 Execução com Python Playwright e Google Chrome headless instalado, em contextos isolados. Servidor local HTTP e abertura direta `file://`. Nenhuma mensagem externa foi enviada.
 
-Esta execução foi repetida após a atualização para fotografias reais por URL e fallback local. Todos os cenários abaixo passaram com os assets finais; os testes dedicados de indisponibilidade do CDN estão em `tests-shell.md`.
-
 ## Resultados
 
 | Verificação | Resultado | Evidência |
@@ -14,8 +12,8 @@ Esta execução foi repetida após a atualização para fotografias reais por UR
 | 390px ordenação | PASS | menor preço, maior preço e nome |
 | 390px busca vazia e recuperação | PASS | Interações e asserções no navegador |
 | 390px galeria por controles e teclado | PASS | Interações e asserções no navegador |
-| 390px WhatsApp de produto sem contato configurado | PASS | Interações e asserções no navegador |
-| 390px quantidade, subtotal e WhatsApp da sacola | PASS | Interações e asserções no navegador |
+| 390px produto sem atalho de compra por WhatsApp | PASS | Interações e asserções no navegador |
+| 390px quantidade, subtotal e ausência de WhatsApp na sacola | PASS | Interações e asserções no navegador |
 | 390px remoção e sacola vazia | PASS | Interações e asserções no navegador |
 | 390px checkout validado, confirmação e sacola limpa | PASS | Interações e asserções no navegador |
 | 390px checkout vazio e produto inexistente | PASS | Interações e asserções no navegador |
@@ -25,8 +23,8 @@ Esta execução foi repetida após a atualização para fotografias reais por UR
 | 1440px ordenação | PASS | menor preço, maior preço e nome |
 | 1440px busca vazia e recuperação | PASS | Interações e asserções no navegador |
 | 1440px galeria por controles e teclado | PASS | Interações e asserções no navegador |
-| 1440px WhatsApp de produto sem contato configurado | PASS | Interações e asserções no navegador |
-| 1440px quantidade, subtotal e WhatsApp da sacola | PASS | Interações e asserções no navegador |
+| 1440px produto sem atalho de compra por WhatsApp | PASS | Interações e asserções no navegador |
+| 1440px quantidade, subtotal e ausência de WhatsApp na sacola | PASS | Interações e asserções no navegador |
 | 1440px remoção e sacola vazia | PASS | Interações e asserções no navegador |
 | 1440px checkout validado, confirmação e sacola limpa | PASS | Interações e asserções no navegador |
 | 1440px checkout vazio e produto inexistente | PASS | Interações e asserções no navegador |

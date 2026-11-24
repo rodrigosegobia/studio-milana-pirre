@@ -46,7 +46,7 @@ with sync_playwright() as p:
     page.get_by_role('dialog').get_by_role('link',name='Nail Design',exact=True).click()
     expect(page).to_have_url(BASE+'nail-design.html')
     record('Menu mobile abre e navega entre as duas áreas')
-    page.locator('[data-nail-contact="whatsapp"]').click()
+    page.locator('.site-footer [data-contact="whatsapp"]').click()
     expect(page.get_by_role('dialog',name='Vamos conversar?')).to_be_visible()
     expect(page.locator('[data-contact-link]')).to_be_hidden()
     capture(page,'contact-open-390')
@@ -61,15 +61,11 @@ with sync_playwright() as p:
     page.keyboard.press('Escape')
     page.evaluate("STUDIO_CONFIG.whatsapp='' ")
     record('Construtor oficial wa.me codifica mensagem; fixture zerada só no teste, sem abrir link')
-    page.goto(BASE+'agendamento.html?servico=alongamento')
-    page.locator('[data-date]:not(:disabled)').first.click()
-    page.locator('[data-time]').first.click()
-    capture(page,'calendar-selected-390',True)
-    page.locator('#booking-next').click()
-    capture(page,'booking-review-390',True)
-    page.locator('#booking-confirm').click()
-    capture(page,'booking-confirmation-390',True)
-    record('Capturas de calendário, revisão e confirmação com dados selecionados')
+    page.locator('[data-photo="0"]').click()
+    expect(page.get_by_role('dialog',name='Nude luminoso')).to_be_visible()
+    capture(page,'portfolio-detail-390',True)
+    page.keyboard.press('Escape')
+    record('Portfólio abre fotografia ampliada e fecha por Escape')
     page.goto(BASE+'produto.html?id=ambre')
     page.locator('#product-add').click()
     page.goto(BASE+'checkout.html')
@@ -77,7 +73,7 @@ with sync_playwright() as p:
     page.get_by_role('button',name='Concluir simulação',exact=True).click()
     capture(page,'checkout-confirmation-390',True)
     record('Captura da confirmação da compra simulada')
-    for route in ['index.html','perfumaria.html','produto.html','carrinho.html','checkout.html','nail-design.html','agendamento.html']:
+    for route in ['index.html','perfumaria.html','produto.html','carrinho.html','checkout.html','nail-design.html']:
         page.goto(BASE+route,wait_until='networkidle')
         links=page.locator('a[href]').evaluate_all('items=>items.map(a=>a.getAttribute("href"))')
         for href in links:
@@ -86,7 +82,7 @@ with sync_playwright() as p:
                 assert (ROOT/unquote(parsed.path)).is_file(), f'{route} -> {href}'
         assert page.locator('h1').count()==1
         assert page.locator('main').count()==1
-    record('Links locais válidos, um main e um h1 nas sete páginas')
+    record('Links locais válidos, um main e um h1 nas seis páginas')
     assert not errors,errors
     record('Shell e estados inspecionados sem erros de JavaScript ou console')
     context.close()

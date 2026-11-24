@@ -5,13 +5,5 @@ window.STUDIO_CONFIG = {
   instagram: '', // URL oficial completa, quando confirmada.
   timezone: 'America/Sao_Paulo',
   demo: true,
-  schedule: {
-    weekdays: [1, 2, 3, 4, 5, 6],
-    open: '09:00', close: '18:00', slotMinutes: 30,
-    breaks: [{ start: '12:00', end: '13:00' }],
-    daysOff: [], blockedSlots: [], leadHours: 24, horizonDays: 60,
-    cancellation: { enabled: false, minimumHours: 24 },
-    rescheduling: { enabled: false, minimumHours: 24 }
-  },
-  integrations: { catalog: null, payments: null, orders: null, calendar: null }
+  integrations: { catalog: null, payments: null, orders: null }
 };

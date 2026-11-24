@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'docs' / 'screenshots'
 OUT.mkdir(parents=True, exist_ok=True)
-PAGES = ['index.html', 'perfumaria.html', 'produto.html?id=ambre', 'carrinho.html', 'checkout.html', 'nail-design.html', 'agendamento.html']
+PAGES = ['index.html', 'perfumaria.html', 'produto.html?id=ambre', 'carrinho.html', 'checkout.html', 'nail-design.html']
 results = []
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path=r'C:\Program Files\Google\Chrome\Application\chrome.exe', headless=True)

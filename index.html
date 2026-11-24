@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="preload" as="image" href="https://images.pexels.com/photos/8166566/pexels-photo-8166566.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
   <script src="assets/js/config.js" defer></script><script src="assets/js/data.js" defer></script><script src="assets/js/app.js" defer></script>
+<script defer src="assets/js/home.js"></script>
 </head>
 <body data-page="inicio">
   <div id="site-header"></div>
@@ -25,19 +26,19 @@
       <p>Seu próximo perfume começa aqui.</p>
       <div class="category-links"><a href="perfumaria.html?categoria=Femininos">Femininos</a><a href="perfumaria.html?categoria=Masculinos">Masculinos</a><a href="perfumaria.html?categoria=Árabes">Árabes</a><a href="perfumaria.html?categoria=Importados">Importados</a><a href="perfumaria.html?categoria=Nicho">Nicho</a></div>
     </section>
-    <section class="section container selection-section" aria-labelledby="selection-title">
+    <section class="section container selection-section" data-reveal aria-labelledby="selection-title">
       <div class="section-heading"><div><h2 id="selection-title">Uma assinatura só sua.</h2><p>Explore notas, descubra sensações e encontre seu favorito.</p></div><a class="text-link" href="perfumaria.html">Ver toda a perfumaria</a></div>
-      <div class="product-grid" id="featured-products"></div>
+      <div class="perfume-loop" id="featured-products" role="region" aria-label="Perfumes em destaque" tabindex="0"></div><div class="loop-controls"><span class="muted">Descubra no seu ritmo.</span><div><button class="icon-button" id="perfume-prev" aria-label="Perfumes anteriores"></button><button class="loop-pause" id="perfume-pause" type="button">Pausar movimento</button><button class="icon-button" id="perfume-next" aria-label="Próximos perfumes"></button></div></div>
       <p class="demo-note selection-demo">Coleção ilustrativa. Nomes e valores fictícios, acompanhados de fotografias de referência.</p>
     </section>
-    <section class="nail-editorial" aria-labelledby="nail-title">
+    <section class="nail-editorial" data-reveal aria-labelledby="nail-title">
       <figure><img src="https://images.pexels.com/photos/34941684/pexels-photo-34941684.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" width="1536" height="1024" alt="Fotografia de manicure nude com pérolas, usada como referência visual" loading="lazy"><figcaption>Fotografia de referência. Portfólio do studio em breve.</figcaption></figure>
-      <div class="nail-editorial-copy"><h2 id="nail-title">A beleza mora<br>nos detalhes.</h2><p>Um momento para você. Um cuidado que acompanha seus gestos. Conheça o universo Nail Design do studio.</p><ul class="service-inline-list"><li>Alongamento</li><li>Blindagem</li><li>Manutenção</li><li>Esmaltação em gel</li></ul><a class="btn" href="agendamento.html">Agende seu momento</a><a class="text-link" href="nail-design.html">Conheça os serviços</a></div>
+      <div class="nail-editorial-copy"><h2 id="nail-title">A beleza mora<br>nos detalhes.</h2><p>Um momento para você. Um cuidado que acompanha seus gestos. Conheça o universo Nail Design do studio.</p><ul class="service-inline-list"><li>Alongamento</li><li>Blindagem</li><li>Manutenção</li><li>Esmaltação em gel</li></ul><a class="btn" href="nail-design.html#portfolio">Explore o portfólio</a><a class="text-link" href="nail-design.html">Conheça os serviços</a></div>
     </section>
     <section class="brands-section container" aria-labelledby="brands-title"><h2 id="brands-title">Grandes nomes. Novas descobertas.</h2><div class="brand-list" aria-label="Marcas citadas pelo cliente"><span class="brand-ch">Carolina Herrera</span><span class="brand-rabanne">rabanne</span><span class="brand-armani">Emporio Armani</span><span class="brand-dior">Dior</span></div><p class="demo-note">Marcas de interesse do studio. Catálogo oficial a confirmar; os produtos desta prévia são fictícios e independentes.</p></section>
-    <section class="help-section container" aria-labelledby="help-title"><div><h2 id="help-title">Vamos encontrar<br>o seu próximo favorito?</h2><p>Perfume, procedimento ou uma dúvida.<br>A conversa começa com você.</p><button class="btn btn-outline" data-contact="whatsapp">Converse com o studio</button></div><div class="faq-list"><details><summary>Como funciona esta prévia?</summary><p>Você pode explorar perfumes, montar sua sacola e simular uma compra, ou escolher um serviço e testar o agendamento. Nenhum pagamento ou reserva real acontece.</p></details><details><summary>Os perfumes já estão à venda?</summary><p>Os nomes, notas, imagens e preços exibidos são ilustrativos. O catálogo real e as condições de venda serão informados pelo studio.</p></details><details><summary>Como falar com a profissional?</summary><p>O acesso ao WhatsApp e ao Instagram estará disponível quando os contatos oficiais forem configurados. Nesta prévia, você pode visualizar e copiar uma mensagem.</p></details></div></section>
+    <section class="help-section container" aria-labelledby="help-title"><div><h2 id="help-title">Vamos encontrar<br>o seu próximo favorito?</h2><p>Perfume, procedimento ou uma dúvida.<br>A conversa começa com você.</p><button class="btn btn-outline" data-contact="whatsapp">Converse com o studio</button></div><div class="faq-list"><details><summary>Como funciona esta prévia?</summary><p>Você pode explorar perfumes, montar sua sacola e simular uma compra, ou conhecer o perfil, os serviços e o portfólio de Nail Design. Nenhum pagamento real acontece.</p></details><details><summary>Os perfumes já estão à venda?</summary><p>Os nomes, notas, imagens e preços exibidos são ilustrativos. O catálogo real e as condições de venda serão informados pelo studio.</p></details><details><summary>Como falar com a profissional?</summary><p>O acesso ao WhatsApp e ao Instagram estará disponível quando os contatos oficiais forem configurados. Nesta prévia, você pode visualizar e copiar uma mensagem.</p></details></div></section>
   </main>
   <div id="site-footer"></div>
-  <noscript><p class="noscript-note">Ative o JavaScript para navegar pelo catálogo, usar a sacola e simular um agendamento.</p></noscript>
+  <noscript><p class="noscript-note">Ative o JavaScript para navegar pelo catálogo, usar a sacola e explorar o portfólio.</p></noscript>
 </body>
 </html>

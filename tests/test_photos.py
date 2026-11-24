@@ -15,7 +15,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "http://127.0.0.1:8765/"
 CHROME = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
-ROUTES = ["index.html", "perfumaria.html", "produto.html?id=ambre", "nail-design.html", "agendamento.html"]
+ROUTES = ["index.html", "perfumaria.html", "produto.html?id=ambre", "nail-design.html"]
 checks, page_errors, console_errors, failed_requests = [], [], [], []
 
 

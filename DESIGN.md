@@ -15,7 +15,6 @@ colors:
   hero-surface: "#eee7dc"
   product-surface: "#eee9df"
   commerce-surface: "#f0ebe2"
-  booking-surface: "#eee8de"
   error: "#9c2c20"
 typography:
   display:
@@ -106,14 +105,6 @@ components:
     textColor: "{colors.ink}"
     rounded: "{rounded.square}"
     padding: "1.5rem"
-  booking-service:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.square}"
-    padding: "20px"
-  booking-service-selected:
-    backgroundColor: "{colors.booking-surface}"
-    textColor: "{colors.ink}"
   calendar-day:
     backgroundColor: "transparent"
     textColor: "{colors.ink}"
@@ -121,18 +112,6 @@ components:
   calendar-day-selected:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.white}"
-  booking-time:
-    backgroundColor: "{colors.white}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.square}"
-    padding: "10px 8px"
-  booking-time-selected:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.white}"
-  booking-progress:
-    backgroundColor: "transparent"
-    textColor: "{colors.muted}"
-    padding: "14px 4px 18px"
 ---
 
 # Design System: Studio Milana Pirre
@@ -153,7 +132,7 @@ O acabamento depende de fotografia, ritmo e tipografia. A identidade usa o arqui
 - Controles retangulares, foco visível e navegação própria para celular.
 - Fontes locais e fotografias reais por URL, com cópias locais para fallback offline.
 
-Este documento registra a implementação em `assets/css/styles.css`, `commerce.css` e `booking.css`, incluindo seus ajustes finais. O frontmatter é a referência normativa dos tokens reutilizados; a composição específica da página inicial permanece em `docs/direction.md`.
+Este documento registra a implementação em `assets/css/styles.css`, `commerce.css` e `nail-design.css`, incluindo seus ajustes finais. O frontmatter é a referência normativa dos tokens reutilizados; a composição específica da página inicial permanece em `docs/direction.md`.
 
 ## Colors
 
@@ -175,7 +154,7 @@ A paleta combina preto de leitura e ação com dourado pontual, champanhe e uma 
 - **Bronze de foco (`focus`)**: contorno de navegação por teclado.
 - **Preto aquecido (`action-hover`)**: resposta do botão principal ao ponteiro.
 - **Fundos editoriais (`hero-surface`, `product-surface`)**: painel do hero, confirmação de inclusão e áreas de fotografia de produto.
-- **Fundos de resumo (`commerce-surface`, `booking-surface`)**: resumos comerciais, agendamento, confirmações e seleção de serviço.
+- **Fundos de resumo (`commerce-surface`)**: resumos comerciais e confirmações.
 
 O token funcional `error` comunica erro no checkout. Ele não participa da paleta editorial.
 
@@ -189,7 +168,7 @@ O token funcional `error` comunica erro no checkout. Ele não participa da palet
 
 Os títulos têm contraste tipográfico, peso leve e espaçamento ligeiramente fechado. A interface mantém caixa de frase e números tabulares para valores, quantidades, durações e horários. Não há escala modular única: os tamanhos respondem ao papel de cada componente.
 
-- **Display, headline e title**: hierarquia base dos títulos no frontmatter; quebras equilibradas e peso regular. O hero possui suas próprias medidas responsivas, e títulos de produto e agendamento usam ajustes locais.
+- **Display, headline e title**: hierarquia base dos títulos no frontmatter; quebras equilibradas e peso regular. O hero possui suas próprias medidas responsivas, e títulos de produto usam ajustes locais.
 - **Body**: leitura principal; parágrafos globais limitados a 75 caracteres de largura. O hero, a introdução de Nail Design e as introduções de seção usam corpo de 1rem após a revisão visual.
 - **Label**: botões principais; rótulos de campos e muitos controles usam tamanho equivalente com peso regular.
 - **Caption**: avisos de demonstração e apoio. Famílias de produto, valores auxiliares e atalhos inferiores usam 0.75rem no CSS final. Algumas legendas de imagem e metainformações do shell permanecem em 0.6875rem.
@@ -203,18 +182,18 @@ O container central tem largura máxima de 1280px e desconta duas margens latera
 
 | Condição implementada | Comportamento |
 | --- | --- |
-| Até 480px | Ações do hero de Nail Design empilham; setas do portfólio ficam ocultas; calendário reduz padding; resumo de agendamento esconde sua fotografia. |
+| Até 480px | Hero, perfil e portfólio de Nail Design usam uma coluna; controles da faixa de perfumes permanecem acessíveis. |
 | Até 639px | Resumo do checkout precede o formulário; cabeçalho de comércio empilha; preço e ação do cartão podem quebrar linha. |
 | A partir de 640px | Grade geral passa de duas para três colunas; catálogo mantém duas; serviços e horários ganham mais colunas; margens intermediárias. |
 | A partir de 900px | Navegação desktop aparece e barra inferior móvel desaparece; hero e editorial da home ficam em duas colunas; margens e seções aumentam. |
-| A partir de 960px | Catálogo ganha filtros laterais e três colunas; produto, sacola, checkout, Nail Design e agendamento assumem layouts amplos; resumos e galerias passam a sticky. |
+| A partir de 960px | Catálogo ganha filtros laterais e três colunas; produto, sacola, checkout, Nail Design assumem layouts amplos; resumos e galerias passam a sticky. |
 | A partir de 1440px | Hero da home cresce para altura mínima de 620px, com título de 4.7rem e navegação mais espaçada. |
 
 A grade base de produtos tem duas colunas e espaçamento de 28px por 14px. A seleção da home mostra dois produtos no celular e três a partir de 640px. O catálogo chega a três colunas a partir de 960px; os relacionados chegam a quatro. Fotografias de cartões usam proporção 4:5; a seleção desktop da home usa 1:1.08. As galerias de produto e Nail Design permitem deslizar horizontalmente, com encaixe por imagem.
 
 A navegação inferior móvel tem quatro destinos, altura de 64px acrescida da área segura do dispositivo e estado ativo indicado por texto escuro e linha superior. O conteúdo reserva 68px inferiores; o documento também aplica afastamento de rolagem para que os controles focados permaneçam acessíveis. O cabeçalho é um bloco normal do fluxo, não um cabeçalho sticky.
 
-No desktop, filtros de catálogo usam posição sticky a 170px do topo, galeria de produto a 155px, resumo comercial a 160px e resumo de agendamento a 130px. Essas posições são da implementação atual, não uma escala global de espaçamento.
+No desktop, filtros de catálogo usam posição sticky a 170px do topo, galeria de produto a 155px, resumo comercial a 160px. Essas posições são da implementação atual, não uma escala global de espaçamento.
 
 A página inicial dá maior destaque visual à perfumaria, conforme o briefing; sua composição é descrita em `docs/direction.md`. Esse requisito da home não reduz a presença editorial na página própria de Nail Design.
 
@@ -252,7 +231,7 @@ Categorias são retangulares. Na home, links têm contorno e hover preto; no cat
 
 ### Cards / Containers
 
-Produtos são cartões abertos: foto, família, nome, preço demonstrativo e ação compacta de adicionar. O texto fica fora da imagem e o volume aparece em etiqueta clara sobre ela. Não há sombra ou contorno envolvendo todo o produto. Resumos comerciais usam `commerce-surface` e padding de 24px na base, 32px a partir de 640px. Resumos de agendamento usam `booking-surface`, com divisórias internas e hierarquia de título serifado e valores sem serifa.
+Produtos são cartões abertos: foto, família, nome, preço demonstrativo e ação compacta de adicionar. O texto fica fora da imagem e o volume aparece em etiqueta clara sobre ela. Não há sombra ou contorno envolvendo todo o produto. Resumos comerciais usam `commerce-surface` e padding de 24px na base, 32px a partir de 640px.
 
 ### Booking Service, Calendar & Progress
 
@@ -283,3 +262,6 @@ Diálogos off-white têm cantos retos, largura máxima de 560px, padding de 24px
 - **Don't** usar dourado como preenchimento padrão da ação principal.
 - **Don't** copiar a identidade de marcas de referência nem substituir as fotos reais por imagens geradas.
 - **Don't** remover avisos de demonstração ou apresentar imagens e informações fictícias como prova real.
+
+## Refinamento da apresentação
+Nail Design usa `nail-design.css`: hero, portfólio com fotos ampliáveis, perfil e quatro serviços. Sem calendário. A home usa uma faixa contínua de 18 px/s, com pausa por botão, foco, hover e movimento reduzido. Botões deslocam no máximo 2 px no hover; fades usam 12 px e 700 ms. Produtos em promoção têm `compareAt` maior que `price`, faixa diagonal champanhe e preço anterior riscado. O preço atual é utilizado em todos os cálculos.
