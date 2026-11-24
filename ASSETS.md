@@ -2,7 +2,7 @@
 
 ## Fotografias de referência
 
-A prévia utiliza fotografias reais de banco de imagens, publicadas no Pexels pelos fotógrafos identificados abaixo. São referências visuais para demonstrar a interface: não retratam produtos disponíveis no Studio Milana Pirre, o estabelecimento, a profissional ou trabalhos realizados por ela. Os nomes, características e preços do catálogo continuam sendo fictícios. Não há vínculo entre as fotografias e marcas oficiais citadas no briefing.
+A prévia utiliza fotografias reais do Pexels e três arquivos de perfumes selecionados pelo usuário para substituir as imagens dos respectivos itens demonstrativos. São referências visuais para demonstrar a interface: não retratam produtos disponíveis no Studio Milana Pirre, o estabelecimento, a profissional ou trabalhos realizados por ela. Os nomes, características e preços do catálogo continuam sendo fictícios. Não há vínculo entre as fotografias e marcas oficiais citadas no briefing.
 
 As fontes, créditos e licença foram consultados em **23/11/2026**. As imagens foram inspecionadas para verificar conteúdo e ausência de marcas-d'água. O site utiliza os links diretos do CDN do Pexels, com cópias locais das mesmas fotografias para contingência quando a conexão estiver indisponível.
 
@@ -11,9 +11,9 @@ As fontes, créditos e licença foram consultados em **23/11/2026**. As imagens 
 | Uso e cópia local | Fotografia original e crédito | Dimensões originais e proporção |
 | --- | --- | --- |
 | Principal da perfumaria — `assets/images/perfume-hero.jpg` | [Orange Perfume Bottle and Box — Daria Liudnaya / Pexels](https://www.pexels.com/photo/orange-perfume-bottle-and-box-8166788/) | 2800 × 3500; 4:5 |
-| Catálogo, composição amarela — `assets/images/perfume-ambre.jpg` | [Close Up Shot of a Perfume Bottle — Daria Liudnaya / Pexels](https://www.pexels.com/photo/close-up-shot-of-a-perfume-bottle-8166570/) | 3500 × 2800; 5:4 |
-| Catálogo, composição lilás — `assets/images/perfume-bois.jpg` | [A Bottle of Perfume and Shapes on a White Surface — Daria Liudnaya / Pexels](https://www.pexels.com/photo/a-bottle-of-perfume-and-shapes-on-a-white-surface-8166430/) | 2800 × 3500; 4:5 |
-| Catálogo, frasco coral — `assets/images/perfume-fleur.jpg` | [Orange Perfume Bottle and Box — Daria Liudnaya / Pexels](https://www.pexels.com/photo/orange-perfume-bottle-and-box-8166788/) | 2800 × 3500; 4:5 |
+| Catálogo, composição amarela — `assets/images/reference-amber.jpg` | [Close Up Shot of a Perfume Bottle — Daria Liudnaya / Pexels](https://www.pexels.com/photo/close-up-shot-of-a-perfume-bottle-8166570/) | 3500 × 2800; 5:4 |
+| Catálogo, composição lilás — `assets/images/reference-woody.jpg` | [A Bottle of Perfume and Shapes on a White Surface — Daria Liudnaya / Pexels](https://www.pexels.com/photo/a-bottle-of-perfume-and-shapes-on-a-white-surface-8166430/) | 2800 × 3500; 4:5 |
+| Catálogo, frasco coral — `assets/images/perfume-hero.jpg` | [Orange Perfume Bottle and Box — Daria Liudnaya / Pexels](https://www.pexels.com/photo/orange-perfume-bottle-and-box-8166788/) | 2800 × 3500; 4:5 |
 | Nail Design, nude com pérolas — `assets/images/nails-hero.jpg` | [Elegant Hand with Pearls and Beige Manicure — elena_ sher / Pexels](https://www.pexels.com/photo/elegant-hand-with-pearls-and-beige-manicure-34941684/) | 3001 × 3997; aproximadamente 3:4 |
 | Nail Design, francesinha — `assets/images/nails-detail.jpg` | [Hand with French Tip Nails — Roman Titov / Pexels](https://www.pexels.com/photo/hand-with-french-tip-nails-13038494/) | 1848 × 2466; 308:411 |
 
@@ -78,4 +78,18 @@ Fontes verificadas e baixadas em 23/11/2026:
 Solicitar fotografias autorizadas dos produtos reais, fotografias dos trabalhos efetivamente realizados, retrato e apresentação aprovados da profissional, além das autorizações de uso de imagem necessárias. Confirmar direitos e disponibilidade do catálogo antes de associar fotografias, nomes, valores e marcas reais.
 
 ## Refinamento editorial
-O hero utiliza o frasco coral com folhas secas, em resolução maior que a referência do catálogo; são duas cópias da mesma fotografia. A composição lilás passa à foto 8166430, verificada na página oficial do Pexels. Permanecem cinco fotografias distintas em seis arquivos locais. Nenhuma imagem foi gerada ou retocada.
+O hero utiliza o frasco coral com folhas secas, em resolução maior que a referência do catálogo; são duas cópias da mesma fotografia. A composição lilás passa à foto 8166430, verificada na página oficial do Pexels. As referências originais continuam disponíveis para os itens ainda ilustrativos; os arquivos selecionados abaixo acrescentam três fotografias ao catálogo. Nenhuma imagem foi gerada ou retocada.
+
+## Fotografias de perfumes selecionadas em 24/11/2026
+
+O usuário autorizou explicitamente publicar estes arquivos e utilizá-los como imagens principais nos itens correspondentes. São servidos localmente na home, catálogo, produto, sacola e checkout. Cada um tem uma única fotografia na galeria, sem controles desnecessários.
+
+| Arquivo local | Item demonstrativo |
+| --- | --- |
+| assets/images/perfume-ambre.jpg | Ambre Lumière |
+| assets/images/perfume-bois.jpg | Bois de Minuit |
+| assets/images/perfume-fleur.jpg | Fleur de Soie |
+
+Esses três arquivos já estavam no workspace quando foram selecionados. Seus links originais e créditos não estavam registrados no projeto; não são atribuídos ao Pexels. Os nomes, notas, volumes e preços do conjunto de demonstração não foram convertidos em dados comerciais verificados.
+
+As cópias Pexels anteriormente usadas nos dois primeiros caminhos foram preservadas em reference-amber.jpg e reference-woody.jpg. Para a referência coral, perfume-hero.jpg serve também como fallback, evitando associar os novos frascos aos outros itens do catálogo por erro de rede.

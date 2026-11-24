@@ -27,6 +27,7 @@ body[data-page="perfumaria"] .breadcrumb,body[data-page="produto"] .breadcrumb{p
 .product-layout{gap:24px}
 .gallery-track{height:280px;aspect-ratio:auto}
 .gallery-slide img{object-fit:contain}
+.cart-item-image img,.checkout-summary-item img{object-fit:contain;background:#fff}
 .gallery-thumb{width:48px;height:52px}
 .gallery-caption{font-size:.6875rem}
 .product-info .product-family{font-size:.8125rem;margin-bottom:12px}
