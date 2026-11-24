@@ -1,6 +1,6 @@
 # Studio Milana Pirre
 
-Prévia estática com loja de perfumes e landing page de Nail Design. Publicação da revisão editorial autorizada pelo usuário em 24/11/2026, após apresentação da prévia local.
+Prévia estática com loja de perfumes e landing page de Nail Design. Revisão mobile aprovada pelo usuário para publicação em 24/11/2026, após apresentação local.
 
 ## Abrir a prévia
 
@@ -59,7 +59,8 @@ Em `assets/js/config.js`, os contatos oficiais começam vazios. O Instagram e o 
 - 9 verificações de navegação, diálogos, links e confirmação aprovadas.
 - 14 grupos de verificações de landing page e movimento aprovados: seis páginas em 360/390/430/1440 px, portfólio, foco, âncoras, movimento reduzido, navegação manual e ausência de movimento automático, preço promocional e redirecionamento legado.
 - Nenhum erro JavaScript; nenhuma rolagem horizontal indevida do documento. A faixa tem rolagem horizontal intencional dentro de seu próprio quadro.
-- Capturas da revisão em `docs/screenshots/editorial/`, inspecionadas em mobile e desktop.
+- Capturas atuais em `docs/screenshots/mobile-reset/`, inspecionadas em mobile e desktop.
+- 9 grupos adicionais de escala, conteúdo visível e toque em sete dimensões, incluindo 320 px e orientação horizontal. Rodar com `python tests/test_mobile.py`.
 
 ```powershell
 python -m pip install playwright
@@ -78,5 +79,5 @@ Site: https://rodrigosegobia.github.io/studio-milana-pirre/.
 
 Skills aplicadas no projeto: frontend-design, impeccable, ui-ux-pro-max e sites. Playwright foi usado para verificação. Imagegen foi usado em uma etapa antiga; seus resultados foram retirados e nenhuma fotografia gerada integra esta revisão. O controle de computador integrado estava indisponível; a prévia local pode ser aberta diretamente no navegador.
 
-## Direção editorial atual
-Hero com duas fotografias e prioridade de escala para perfumaria. Cabeçalho mais compacto, categorias tipográficas e mensagem institucional própria substituem a faixa de marcas externas. Landing Nail Design mantém perfil, portfólio e serviços sem agenda. Home e landing também verificadas em 640, 768 e 1024 px; ambas as ações do hero ficam acima da navegação inferior no celular. Detalhes do fechamento em docs/review.md.
+## Direção atual
+Revisão mobile baseada na referência Carolina Herrera escolhida pelo usuário: campanha fotográfica, título curto sobreposto, cabeçalho compacto, categorias horizontais, vitrine com dois produtos visíveis e portfólio em duas colunas no celular. Barra inferior fixa e revelações que ocultavam conteúdo foram retiradas. Imagens têm limites explícitos de tamanho; catálogo, sacola e checkout permanecem funcionais. Detalhes em DESIGN.md e docs/review.md.

@@ -5,3 +5,45 @@
 .catalog-search input,.catalog-sort select,.filter-content select,.checkout-fieldset input[type=text]{border-color:var(--control-line)}
 .product-quantity{grid-template-columns:44px 32px 44px}.cart-quantity{height:46px}.cart-quantity button{width:44px;height:44px}
 @media(prefers-reduced-motion:reduce){.gallery-track{scroll-behavior:auto!important}}
+
+/* Store pages use the same compact mobile scale as the campaign home. */
+body[data-page="perfumaria"] .breadcrumb,body[data-page="produto"] .breadcrumb{padding-block:8px}
+.catalog-intro{display:block;text-align:center;padding-top:8px;padding-bottom:20px}
+.catalog-intro h1{font:600 1.75rem/1.2 var(--font-body);letter-spacing:-.025em;margin-bottom:10px}
+.catalog-intro p{font-size:.8125rem;line-height:1.6;margin:auto}
+.catalog-intro-image{display:none}
+.category-tabs{gap:16px;padding:0;border-bottom:1px solid var(--line)}
+.category-tabs button{font-size:.75rem;min-height:48px;padding:10px 0;border:0;border-bottom:2px solid transparent}
+.category-tabs button[aria-pressed=true]{background:none;color:var(--ink);border-bottom-color:var(--ink)}
+.category-tabs button:hover{border-color:transparent;border-bottom-color:var(--ink)}
+.catalog-toolbar{padding-block:16px;gap:12px}
+.catalog-sort label,.catalog-sort select{font-size:.75rem}
+.catalog-filters summary{font-size:.8125rem;min-height:44px}
+.catalog-body{gap:16px}
+.results-meta{font-size:.6875rem}
+.catalog-disclaimer{font-size:.6875rem;margin-top:22px}
+.commerce-page-heading{margin:16px 0 24px}
+.commerce-page-heading h1,.product-info h1,.cart-empty h1{font:600 1.75rem/1.2 var(--font-body);letter-spacing:-.025em}
+.product-layout{gap:24px}
+.gallery-track{height:280px;aspect-ratio:auto}
+.gallery-slide img{object-fit:contain}
+.gallery-thumb{width:48px;height:52px}
+.gallery-caption{font-size:.6875rem}
+.product-info .product-family{font-size:.8125rem;margin-bottom:12px}
+.product-info .product-price{font-size:1.2rem;margin-top:16px}
+.product-description{font-size:.875rem;margin-block:16px;line-height:1.7}
+.product-specs{margin-block:16px;gap:6px}
+.product-specs span{font-size:.6875rem;padding:7px 9px}
+.product-buy{margin-top:18px}
+.product-related{padding-block:32px}
+.product-related-heading{gap:12px}
+.product-related-heading h2{font:600 1.25rem/1.3 var(--font-body)}
+.product-related-heading a{font-size:.6875rem}
+.cart-item-info h2{font:600 1rem/1.3 var(--font-body)}
+@media(min-width:640px){
+ .catalog-intro{padding-block:16px 28px}.catalog-intro h1,.commerce-page-heading h1,.product-info h1{font-size:2rem}.catalog-intro p{font-size:.875rem}
+ .gallery-track{height:400px}.catalog-toolbar{padding-block:22px}.product-related-heading h2{font-size:1.5rem}
+}
+@media(min-width:1000px){
+ .catalog-intro{padding-block:22px 34px}.catalog-intro h1{font-size:2.2rem}.gallery-track{height:480px}.product-info h1{font-size:2rem}
+}

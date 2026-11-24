@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 from playwright.sync_api import sync_playwright, expect
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'docs/screenshots/editorial'
+OUT=ROOT/'docs/screenshots/mobile-reset'
 OUT.mkdir(parents=True,exist_ok=True)
 BASE='http://127.0.0.1:8765/'
 checks=[]

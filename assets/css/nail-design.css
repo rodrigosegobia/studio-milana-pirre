@@ -1,92 +1,64 @@
-﻿/* Institutional Nail Design: photographs lead; commerce remains in perfumery. */
-body[data-page="nail-design"] .breadcrumb{padding-block:14px;font-size:.75rem}
-.nail-hero{display:grid;gap:24px;padding-bottom:44px}
-.nail-hero-copy{grid-row:2}
-.nail-hero h1{font-size:clamp(2.6rem,10vw,4.5rem);line-height:1.04;letter-spacing:-.035em;margin-bottom:18px}
-.nail-hero-copy>p{max-width:38ch;color:var(--muted);font-size:.9375rem;line-height:1.7;margin-bottom:22px}
-.nail-hero-copy>.btn{min-width:180px}
-.nail-section-nav{display:flex;gap:26px;margin-top:10px}
-.nail-section-nav a{display:inline-flex;align-items:center;min-height:44px;font-size:.8125rem;text-decoration:underline;text-underline-offset:5px}
-.nail-hero-picture{margin:0;position:relative;grid-row:1;min-width:0}
-.nail-hero-picture img{width:100%;height:auto;aspect-ratio:1.7;object-fit:cover;object-position:50% 42%;background:#eee8df}
-.nail-hero-picture figcaption{font-size:.6875rem;color:var(--muted);padding-top:9px;line-height:1.5}
-.nail-portfolio{border-top:1px solid var(--line)}
-.nail-portfolio .section-heading{margin-bottom:30px;align-items:end}
-.nail-portfolio .section-heading p{max-width:43ch}
-.portfolio-hint{font-size:.75rem;white-space:nowrap}
-.portfolio-grid{display:grid;gap:34px}
-.portfolio-work{margin:0;min-width:0}
-.portfolio-photo{display:block;position:relative;padding:0;border:0;overflow:hidden;width:100%;background:var(--champagne);cursor:zoom-in}
-.portfolio-photo img{width:100%;height:auto;aspect-ratio:1.05;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
-.portfolio-enlarge{position:absolute;bottom:12px;right:12px;background:var(--paper);width:44px;height:44px;display:grid;place-items:center;transition:background .2s ease}
-.portfolio-work figcaption{padding-top:16px}
-.portfolio-work h3{font-size:1.65rem;line-height:1.2;margin:0 0 8px}
-.portfolio-work figcaption p{font-size:.8125rem;color:var(--muted);line-height:1.7;max-width:44ch}
-.nail-portfolio>.demo-note{margin-top:24px;max-width:75ch}
-.nail-services{padding-top:0}
-.nail-section-intro{display:grid;gap:18px;margin-bottom:30px}
-.nail-section-intro h2{font-size:clamp(2.1rem,4vw,3.3rem)}
-.nail-section-intro p{max-width:44ch;color:var(--muted);line-height:1.8;font-size:.9375rem}
-.nail-service{border-top:1px solid var(--line);padding:24px 0;display:grid;gap:14px}
+/* Nail Design follows the compact storefront, without appointments. */
+body[data-page="nail-design"] .breadcrumb{padding-block:8px;font-size:.6875rem}
+.nail-hero{display:grid;gap:20px;padding-bottom:28px}
+.nail-hero-picture{grid-row:1;min-width:0}
+.nail-hero-picture img{width:100%;height:200px;object-fit:cover;object-position:50% 42%;background:#e6ded4}
+.nail-hero-picture figcaption{padding-top:6px;font-size:.625rem;line-height:1.5;color:var(--muted)}
+.nail-hero-copy{text-align:center}
+.nail-hero h1{font:600 1.75rem/1.2 var(--font-body);letter-spacing:-.025em;max-width:22ch;margin:0 auto 10px}
+.nail-hero-copy>p{font-size:.8125rem;line-height:1.65;color:var(--muted);max-width:42ch;margin:0 auto 16px}
+.nail-hero-copy>.btn{min-height:44px;font-size:.75rem;padding:12px 24px}
+.nail-section-nav{display:flex;justify-content:center;gap:26px;margin-top:8px}
+.nail-section-nav a{display:flex;align-items:center;min-height:44px;font-size:.75rem;text-decoration:underline;text-underline-offset:5px}
+.nail-portfolio{border-top:1px solid var(--line);padding-block:28px}
+.nail-portfolio .section-heading{display:block;text-align:center;margin-bottom:20px}
+.nail-portfolio .section-heading h2{font:600 1.375rem/1.25 var(--font-body);letter-spacing:-.02em;margin-bottom:8px}
+.nail-portfolio .section-heading p{font-size:.8125rem;line-height:1.65;margin:auto}
+.portfolio-hint{display:none}
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.portfolio-work{min-width:0;margin:0}
+.portfolio-photo{position:relative;display:block;width:100%;padding:0;border:0;background:var(--champagne);overflow:hidden;cursor:zoom-in}
+.portfolio-photo img{width:100%;height:auto;aspect-ratio:1/1.05;object-fit:cover;transition:transform .3s ease}
+.portfolio-enlarge{position:absolute;bottom:8px;right:8px;background:#fff;width:36px;height:36px;display:grid;place-items:center}
+.portfolio-enlarge .icon{width:17px;height:17px}
+.portfolio-work figcaption{padding-top:10px}
+.portfolio-work h3{font:600 .875rem/1.35 var(--font-body);margin-bottom:6px;letter-spacing:0;min-height:2.7em}
+.portfolio-work figcaption p{font-size:.75rem;line-height:1.6;color:var(--muted)}
+.nail-portfolio>.demo-note{margin-top:18px;font-size:.6875rem;line-height:1.65}
+.nail-services{padding-block:12px 30px}
+.nail-section-intro{margin-bottom:20px;text-align:center}
+.nail-section-intro h2{font:600 1.375rem/1.25 var(--font-body);letter-spacing:-.02em;margin-bottom:10px}
+.nail-section-intro p{font-size:.8125rem;line-height:1.65;color:var(--muted);max-width:60ch;margin:auto}
+.nail-service{border-top:1px solid var(--line);padding:18px 0;display:grid;gap:8px}
 .nail-service:last-child{border-bottom:1px solid var(--line)}
-.nail-service h3{font-size:1.65rem;margin:0}
-.nail-service p{font-size:.9375rem;line-height:1.8;margin:0 0 8px;max-width:60ch}
-.nail-service .muted{font-size:.8125rem;margin-bottom:0}
-.nail-profile-section{background:#eee7dc;padding-block:42px}
-.nail-profile{display:grid;grid-template-columns:96px minmax(0,1fr);gap:22px;align-items:start}
-.profile-picture{height:120px;background:var(--ink);display:grid;place-items:center;overflow:hidden}
-.profile-picture>.brand-logo{transform:scale(.62)}
-.profile-picture>img{height:100%;width:100%;object-fit:cover}
-.profile-copy h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:10px}
-.profile-role{font-size:.75rem;margin-bottom:18px;color:#595143}
-.profile-copy>p:not(.profile-role){max-width:49ch;font-size:.875rem;line-height:1.8;color:#595143}
-.profile-specialties{list-style:none;padding:18px 0 12px;margin:0;display:flex;gap:8px 20px;flex-wrap:wrap;font-size:.75rem;color:#595143}
-.profile-copy button{min-height:44px;font-size:.8125rem}
-.nail-contact{padding:48px 0;background:var(--paper)}
-.nail-contact-inner{display:grid;gap:24px;align-items:center}
-.nail-contact h2{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;margin-bottom:18px}
-.nail-contact p{max-width:45ch;color:var(--muted);font-size:.9375rem;line-height:1.8}
-.nail-contact .btn{justify-self:start}
-.portfolio-dialog{max-width:800px}
-.portfolio-dialog>img{max-height:65dvh;object-fit:contain;width:100%}
-.portfolio-dialog>p{margin-top:16px;line-height:1.6}
-.nail-hero,.nail-portfolio,.nail-profile-section,.nail-services{scroll-margin-top:24px}
-@media(hover:hover){.portfolio-photo:hover img{transform:scale(1.025)}.portfolio-photo:hover .portfolio-enlarge{background:var(--champagne)}}
+.nail-service h3{font:600 .9375rem/1.4 var(--font-body);letter-spacing:0}
+.nail-service p{font-size:.8125rem;line-height:1.65;margin:0 0 6px;max-width:65ch}
+.nail-service .muted{font-size:.6875rem;margin:0}
+.nail-profile-section{background:#f3efe8;padding-block:28px}
+.nail-profile{display:grid;grid-template-columns:80px minmax(0,1fr);gap:18px;max-width:1000px;align-items:start}
+.profile-picture{height:100px;position:relative;background:var(--ink);overflow:hidden}
+.profile-picture>.brand-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.52)}
+.profile-picture>img{width:100%;height:100%;object-fit:cover}
+.profile-copy h2{font:600 1.25rem/1.3 var(--font-body);letter-spacing:-.02em;margin-bottom:8px}
+.profile-role{font-size:.625rem;margin-bottom:12px;color:var(--muted)}
+.profile-copy>p:not(.profile-role){font-size:.8125rem;line-height:1.65;color:var(--muted)}
+.profile-specialties{list-style:none;padding:12px 0 0;margin:0;display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.625rem;color:var(--muted)}
+.profile-copy button{font-size:.6875rem;min-height:44px}
+.nail-contact{padding:28px 0;text-align:center}
+.nail-contact-inner{display:grid;gap:18px}
+.nail-contact h2{font:600 1.375rem/1.25 var(--font-body);letter-spacing:-.02em;margin-bottom:10px}
+.nail-contact p{font-size:.8125rem;line-height:1.65;color:var(--muted);max-width:55ch;margin:auto}
+.nail-contact .btn{justify-self:center;font-size:.75rem;min-height:44px}
+.portfolio-dialog{max-width:760px}
+.portfolio-dialog>img{width:100%;max-height:62dvh;object-fit:contain}
+.portfolio-dialog>p{margin-top:12px;font-size:.8125rem;line-height:1.6}
+@media(hover:hover){.portfolio-photo:hover img{transform:scale(1.015)}}
 @media(min-width:640px){
- .nail-hero{grid-template-columns:1fr 1fr;align-items:center;gap:36px;padding-block:12px 54px}
- .nail-hero-copy{grid-column:1;grid-row:1}
- .nail-hero-picture{grid-column:2;grid-row:1}
- .nail-hero h1{font-size:clamp(2.8rem,5vw,4.5rem)}
- .nail-hero-picture img{aspect-ratio:.9;object-position:50% 50%}
- .portfolio-grid{grid-template-columns:1.05fr 1fr;gap:36px}
- .portfolio-grid .portfolio-work:nth-child(2){padding-top:80px}
- .portfolio-grid .portfolio-work:nth-child(2) img{aspect-ratio:.95}
- .nail-service{grid-template-columns:1fr 1.6fr;gap:40px;padding-block:28px}
- .nail-section-intro{grid-template-columns:1fr 1.6fr;gap:40px;align-items:end;margin-bottom:40px}
- .nail-profile{grid-template-columns:200px minmax(0,1fr);gap:50px;align-items:center;max-width:1020px}
- .profile-picture{height:220px}
- .profile-picture>.brand-logo{transform:scale(1.05)}
- .profile-copy h2{margin-bottom:14px}
- .nail-contact-inner{grid-template-columns:1fr auto;gap:50px}
- .nail-contact .btn{justify-self:end}
+ .nail-hero{grid-template-columns:1fr 1fr;align-items:center;gap:32px;padding-block:16px 36px}.nail-hero-copy{grid-column:1;grid-row:1;text-align:left}.nail-hero h1,.nail-hero-copy>p{margin-left:0}.nail-hero-picture{grid-column:2;grid-row:1}.nail-hero-picture img{height:300px}.nail-section-nav{justify-content:flex-start}
+ .nail-portfolio{padding-block:36px}.portfolio-grid{gap:24px;max-width:960px;margin:auto}.portfolio-photo img{aspect-ratio:1.25;max-height:360px}.portfolio-work h3{font-size:1rem;min-height:0}.portfolio-work figcaption p{font-size:.8125rem}.nail-portfolio>.demo-note{text-align:center}
+ .nail-service{grid-template-columns:1fr 2fr;gap:30px}.nail-services{padding-block:16px 36px}.nail-profile{grid-template-columns:130px 1fr;gap:32px;align-items:center}.profile-picture{height:140px}.profile-picture>.brand-logo{transform:translate(-50%,-50%) scale(.85)}
 }
-@media(min-width:960px){
- body[data-page="nail-design"] .breadcrumb{padding-block:18px}
- .nail-hero{grid-template-columns:.9fr 1.1fr;gap:80px;padding-bottom:68px}
- .nail-hero-copy>p{font-size:1rem;margin-bottom:28px}
- .nail-hero-picture img{aspect-ratio:1.16;max-height:560px}
- .nail-hero-picture figcaption{font-size:.75rem;padding-top:10px}
- .nail-hero h1{font-size:clamp(3.6rem,5.4vw,5.2rem);margin-bottom:24px}
- .nail-portfolio .section-heading{margin-bottom:38px}
- .portfolio-grid{gap:56px}
- .portfolio-work h3{font-size:1.9rem}
- .nail-profile-section{padding-block:56px}
- .nail-profile{grid-template-columns:230px minmax(0,1fr);gap:72px}
- .profile-picture{height:240px}
- .profile-copy>p:not(.profile-role){font-size:1rem}
- .profile-specialties{font-size:.8125rem}
- .nail-contact{padding-block:76px}
+@media(min-width:1000px){
+ .nail-hero{max-width:1120px;gap:64px;padding-bottom:40px}.nail-hero h1{font-size:2.2rem}.nail-hero-copy>p{font-size:.9375rem}.nail-hero-picture img{height:360px}.nail-portfolio .section-heading h2,.nail-section-intro h2{font-size:1.65rem}.nail-services{max-width:1000px}.nail-profile-section{padding-block:36px}.nail-contact{padding-block:36px}
 }
-@media(prefers-reduced-motion:reduce){.portfolio-photo img,.portfolio-enlarge{transition:none}.portfolio-photo:hover img{transform:none}}
-.profile-picture{position:relative}.profile-picture>.brand-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.62)}
-@media(min-width:640px){.profile-picture>.brand-logo{transform:translate(-50%,-50%) scale(1.05)}}
+@media(prefers-reduced-motion:reduce){.portfolio-photo img{transition:none}.portfolio-photo:hover img{transform:none}}

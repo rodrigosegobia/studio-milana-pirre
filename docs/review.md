@@ -1,32 +1,36 @@
-﻿# Revisão editorial — prévia local
+# Revisão mobile — 24/11/2026
 
-## Resultado
+## Motivo e referência
 
-Prévia local apresentada e publicação autorizada pelo usuário em 24/11/2026. Os resultados abaixo registram a validação anterior à publicação.
+A composição anterior foi rejeitada pelo usuário por escala inadequada e experiência ruim no celular. A nova direção segue a estrutura observada em https://www.carolinaherrera.com/br/pt: campanha de ponta a ponta, cabeçalho sobre a fotografia, títulos sans curtos, links sublinhados, categorias horizontais e apresentação compacta da loja.
 
-A primeira dobra agora apresenta perfumaria e Nail Design em duas fotografias de escalas diferentes, com prioridade comercial da perfumaria e ações explícitas. A identidade existente permanece: logo original, paleta e fontes locais. O cabeçalho tem menor altura e quatro destinos principais; categorias e filtros continuam acessíveis.
+Mantidos logo, arquivos de fonte, paleta base, fotografias reais, fallbacks e funcionalidades. Sem imagens geradas ou dependências novas.
 
-A vitrine automática foi substituída por uma faixa manual com snap, controles e teclado. Não há produtos duplicados no DOM. O usuário pode comparar nomes, volumes e preços sem movimento involuntário. Promoções demonstrativas permanecem discretas; o preço atual continua usado pela sacola e checkout.
+## Alterações e correções
 
-A faixa de marcas externas foi substituída por uma apresentação do próprio Studio Milana Pirre. O bloco institucional conecta os dois segmentos antes do editorial de unhas. A landing Nail Design foi refinada com hero mais compacto, galeria assimétrica, serviços e perfil provisório, sem agenda.
+- Home de aproximadamente 4.300 para 2.080 px de altura em 390 px de largura.
+- Cabeçalho de 72 px mobile; navegação inferior fixa retirada.
+- Hero limitado a 480 px; imagens de produto em torno de 187 px no mobile de 390 px. Nail Design na home: 260 px; hero da landing: 200 px.
+- Portfólio em duas colunas no celular, com ampliação por toque.
+- Títulos, espaços e rodapé reduzidos; catálogo sem fotografia de abertura.
+- Removida a lógica que deixava seções com opacidade quase zero até a interseção de scroll.
+- CSS e app.js com versão na URL para evitar apresentação híbrida com arquivos antigos em cache.
+- Galeria de produto com altura controlada e fotografia inteira, sem corte por cover.
 
-## Inspeção e correções
+## Verificação
 
-Capturas atuais em docs/screenshots/editorial. Inspecionados hero desktop/mobile, home completa, vitrine e landing Nail Design. Durante a inspeção foram corrigidos: altura mínima antiga que alongava o hero desktop, corte da logo no perfil mobile, palavras concatenadas ao esconder quebras de linha e desalinhamento entre preços com e sem promoção. A família olfativa e o volume saíram da fotografia para uma linha de informação própria.
+- 29 grupos de comércio aprovados.
+- 9 verificações compartilhadas de navegação e diálogos aprovadas.
+- 14 grupos da landing e vitrine aprovados.
+- 12 cenários de fallback com CDN bloqueado aprovados; 54 falhas provocadas recuperadas localmente.
+- 9 grupos adicionais de mobile aprovados: seis rotas em 320×667, 360×740, 390×844, 430×932, 844×390, 768×1024 e 1440×900; limites de imagens, conteúdo visível e ausência de overflow indevido.
+- Gestos de toque em Chrome emulado: menu, busca, swipe da vitrine, navegação anterior, produto promocional na sacola e ampliação/fechamento de fotografia com retorno de foco.
+- Zero erros JavaScript nas verificações. git diff --check aprovado.
 
-O hero de ambas as páginas foi medido em 360, 390, 430, 640, 768, 1024 e 1440 px. As ações principais ficaram visíveis na primeira dobra, sem sobreposição da navegação inferior. Nenhum overflow horizontal do documento foi identificado. A vitrine usa rolagem horizontal contida e intencional.
+Capturas visuais em docs/screenshots/mobile-reset. Inspecionadas home, Nail Design, catálogo e produto em mobile e desktop. A emulação não substitui um teste em aparelho físico ou Safari real.
 
-## Testes
+## Avaliação e publicação
 
-- 29 grupos de comércio aprovados: filtros, busca, galeria, quantidades, totais, remoção, checkout, HTTP, file:// e armazenamento bloqueado/malformado.
-- 9 verificações compartilhadas aprovadas: navegação, nomes de diálogos, teclado, foco, contatos demonstrativos, links e confirmação.
-- 14 grupos de landing/vitrine aprovados: seis páginas em quatro larguras, portfólio, retorno de foco, âncoras, redução de movimento, navegação manual, ausência de autoplay, preço promocional e redirecionamento legado.
-- 12 cenários de fallback aprovados com o CDN bloqueado: HTTP mobile/desktop e file://, incluindo foto ampliada da galeria. As 60 falhas de rede provocadas foram recuperadas localmente; nenhum erro JavaScript ou falha local.
+A página ficou substancialmente mais curta e a navegação mais próxima do modelo solicitado. O hero conserva fotografia com destaque, mas com limite de altura no celular. A identidade final continua limitada por fotografias ilustrativas repetidas, perfil provisório e catálogo fictício.
 
-O teste de fallback passou a abrir a galeria antes de validar sua imagem: o elemento vazio de um diálogo fechado não representa uma fotografia quebrada.
-
-## Avaliação crítica e limites
-
-A hierarquia comercial está mais clara, a primeira dobra já apresenta os dois segmentos e a marca assume a narrativa. A navegação manual melhora a leitura dos produtos. O resultado não deve ser considerado identidade comercial definitiva: fotografias de referência ainda se repetem entre fragrâncias, e faltam retrato, biografia, catálogo e portfólio oficiais. Essas lacunas estão identificadas na interface e não foram preenchidas com informações inventadas.
-
-Verificação em Chrome headless e capturas, sem aparelho físico, Safari, Firefox ou leitor de tela real. Não há backend de pagamentos/pedidos nem painel de edição de portfólio. Nenhuma imagem foi gerada, nenhuma tecnologia foi migrada e não foram adicionadas dependências.
+Prévia local apresentada. Publicação desta revisão autorizada pelo usuário em 24/11/2026.
