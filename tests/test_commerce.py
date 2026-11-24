@@ -122,7 +122,7 @@ def commerce_journey(browser, width: int) -> None:
         page.get_by_role("link", name="Conhecer Ambre Lumière", exact=True).click()
         expect(page.locator("h1")).to_have_text("Ambre Lumière")
         assert_no_overflow(page, label + " product")
-        expect(page.locator('#gallery-track img')).to_have_attribute('src', 'assets/images/perfume-ambre.jpg')
+        expect(page.locator('#gallery-track img')).to_have_attribute('src', 'assets/images/perfume-ambre.jpg?v=20261124m3')
         expect(page.locator('.gallery-controls')).to_be_hidden()
         navigate(page, 'produto.html?id=oud')
         page.locator("#gallery-next").click()
