@@ -10,9 +10,9 @@ As fontes, créditos e licença foram consultados em **23/11/2026**. As imagens 
 
 | Uso e cópia local | Fotografia original e crédito | Dimensões originais e proporção |
 | --- | --- | --- |
-| Principal da perfumaria — `assets/images/perfume-hero.jpg` | [Close Up Shot of a Bottle of Perfume — Daria Liudnaya / Pexels](https://www.pexels.com/photo/close-up-shot-of-a-bottle-of-perfume-8166566/) | 3500 × 2800; 5:4 |
+| Principal da perfumaria — `assets/images/perfume-hero.jpg` | [Orange Perfume Bottle and Box — Daria Liudnaya / Pexels](https://www.pexels.com/photo/orange-perfume-bottle-and-box-8166788/) | 2800 × 3500; 4:5 |
 | Catálogo, composição amarela — `assets/images/perfume-ambre.jpg` | [Close Up Shot of a Perfume Bottle — Daria Liudnaya / Pexels](https://www.pexels.com/photo/close-up-shot-of-a-perfume-bottle-8166570/) | 3500 × 2800; 5:4 |
-| Catálogo, composição lilás — `assets/images/perfume-bois.jpg` | [A Close-Up Shot of a Perfume Bottle — Daria Liudnaya / Pexels](https://www.pexels.com/photo/a-close-up-shot-of-a-perfume-bottle-8166613/) | 3500 × 2800; 5:4 |
+| Catálogo, composição lilás — `assets/images/perfume-bois.jpg` | [A Bottle of Perfume and Shapes on a White Surface — Daria Liudnaya / Pexels](https://www.pexels.com/photo/a-bottle-of-perfume-and-shapes-on-a-white-surface-8166430/) | 2800 × 3500; 4:5 |
 | Catálogo, frasco coral — `assets/images/perfume-fleur.jpg` | [Orange Perfume Bottle and Box — Daria Liudnaya / Pexels](https://www.pexels.com/photo/orange-perfume-bottle-and-box-8166788/) | 2800 × 3500; 4:5 |
 | Nail Design, nude com pérolas — `assets/images/nails-hero.jpg` | [Elegant Hand with Pearls and Beige Manicure — elena_ sher / Pexels](https://www.pexels.com/photo/elegant-hand-with-pearls-and-beige-manicure-34941684/) | 3001 × 3997; aproximadamente 3:4 |
 | Nail Design, francesinha — `assets/images/nails-detail.jpg` | [Hand with French Tip Nails — Roman Titov / Pexels](https://www.pexels.com/photo/hand-with-french-tip-nails-13038494/) | 1848 × 2466; 308:411 |
@@ -23,9 +23,9 @@ Os nomes locais dos arquivos identificam sua função na aplicação, não um pr
 
 Os parâmetros do CDN solicitam compressão e largura adequada à apresentação; a proporção original é preservada pelo serviço. O enquadramento visual da interface é definido por CSS, sem retocar as fotografias.
 
-- Principal da perfumaria, largura 1400: [imagem direta](https://images.pexels.com/photos/8166566/pexels-photo-8166566.jpeg?auto=compress&cs=tinysrgb&w=1400).
+- Principal da perfumaria, largura 1400: [imagem direta](https://images.pexels.com/photos/8166788/pexels-photo-8166788.jpeg?auto=compress&cs=tinysrgb&w=1400).
 - Catálogo amarelo, largura 800: [imagem direta](https://images.pexels.com/photos/8166570/pexels-photo-8166570.jpeg?auto=compress&cs=tinysrgb&w=800).
-- Catálogo lilás, largura 800: [imagem direta](https://images.pexels.com/photos/8166613/pexels-photo-8166613.jpeg?auto=compress&cs=tinysrgb&w=800).
+- Catálogo lilás, largura 900: [imagem direta](https://images.pexels.com/photos/8166430/pexels-photo-8166430.jpeg?auto=compress&cs=tinysrgb&w=900).
 - Catálogo coral, largura 800: [imagem direta](https://images.pexels.com/photos/8166788/pexels-photo-8166788.jpeg?auto=compress&cs=tinysrgb&w=800).
 - Nude com pérolas, largura 1200: [imagem direta](https://images.pexels.com/photos/34941684/pexels-photo-34941684.jpeg?auto=compress&cs=tinysrgb&w=1200).
 - Francesinha, largura 1200: [imagem direta](https://images.pexels.com/photos/13038494/pexels-photo-13038494.jpeg?auto=compress&cs=tinysrgb&w=1200).
@@ -34,7 +34,7 @@ As cópias em `assets/images/` correspondem às mesmas fotos. A disponibilidade 
 
 ## Datas e metadados da fonte
 
-As quatro fotografias de Daria Liudnaya foram publicadas em **01/06/2021**, com data de captura **10/05/2021** e câmera **NIKON Z 7**, conforme as páginas oficiais.
+As três fotografias distintas de Daria Liudnaya foram publicadas em **01/06/2021**, com data de captura **10/05/2021** e câmera **NIKON Z 7**, conforme as páginas oficiais.
 
 A fotografia de elena_ sher informa data e captura em **26/11/2025**. A fonte registra câmera/aplicativo **Foodie**, distância focal 4,71 mm, abertura f/1,8, ISO 248, exposição 1/50 s e software Snapseed 2.0.
 
@@ -76,3 +76,6 @@ Fontes verificadas e baixadas em 23/11/2026:
 ## Substituição para produção
 
 Solicitar fotografias autorizadas dos produtos reais, fotografias dos trabalhos efetivamente realizados, retrato e apresentação aprovados da profissional, além das autorizações de uso de imagem necessárias. Confirmar direitos e disponibilidade do catálogo antes de associar fotografias, nomes, valores e marcas reais.
+
+## Refinamento editorial
+O hero utiliza o frasco coral com folhas secas, em resolução maior que a referência do catálogo; são duas cópias da mesma fotografia. A composição lilás passa à foto 8166430, verificada na página oficial do Pexels. Permanecem cinco fotografias distintas em seis arquivos locais. Nenhuma imagem foi gerada ou retocada.

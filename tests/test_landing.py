@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 from playwright.sync_api import sync_playwright, expect
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'docs/screenshots/review'
+OUT=ROOT/'docs/screenshots/editorial'
 OUT.mkdir(parents=True,exist_ok=True)
 BASE='http://127.0.0.1:8765/'
 checks=[]
@@ -39,9 +39,9 @@ with sync_playwright() as p:
   assert page.url.endswith('#perfil')
   record(f'{width}px: portfolio, profile anchors, lightbox and focus')
   page.goto(BASE+'index.html',wait_until='networkidle')
-  expect(page.locator('.perfume-loop-group').first.locator('.product-card')).to_have_count(6)
-  expect(page.locator('.perfume-loop-group').first.locator('.product-ribbon')).to_have_count(2)
-  expect(page.locator('#perfume-pause')).to_be_disabled()
+  expect(page.locator('#featured-products .product-card')).to_have_count(6)
+  expect(page.locator('#featured-products .product-ribbon')).to_have_count(2)
+  expect(page.locator('#perfume-pause')).to_have_count(0)
   page.locator('#featured-products').scroll_into_view_if_needed()
   left=page.locator('#featured-products').evaluate('(e)=>e.scrollLeft');page.wait_for_timeout(400)
   assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')==left
@@ -54,19 +54,13 @@ with sync_playwright() as p:
  page.goto(BASE,wait_until='networkidle');ready(page)
  page.locator('#featured-products').scroll_into_view_if_needed();page.mouse.move(0,0);page.wait_for_timeout(250)
  initial=page.locator('#featured-products').evaluate('(e)=>e.scrollLeft');page.wait_for_timeout(700)
- assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')>initial+5
- page.locator('#perfume-pause').click()
- stopped=page.locator('#featured-products').evaluate('(e)=>e.scrollLeft');page.wait_for_timeout(400)
- assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')==stopped
- page.locator('#featured-products').evaluate('(e)=>e.scrollLeft=e.children[1].offsetLeft-e.children[0].offsetLeft-3')
- page.locator('#perfume-pause').click();page.wait_for_timeout(700)
- assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')<30
- record('Continuous motion, pause and seamless loop boundary')
- page.locator('#perfume-pause').click()
- page.locator('.perfume-loop-group').first.locator('[data-add-product="ambre"]').click()
+ assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')==initial
+ page.locator('#perfume-next').click();page.wait_for_timeout(550)
+ assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')>initial
+ page.locator('#perfume-prev').click();page.wait_for_timeout(550)
+ page.locator('#featured-products [data-add-product="ambre"]').click()
  assert page.evaluate('Studio.cartTotal()')==389
- assert page.locator('.perfume-loop-group').first.locator('.product-old-price').first.inner_text().endswith('459,00')
- record('Demonstrative promotional price retained in cart')
+ record('Manual navigation, no autoplay and promotional cart price')
  page.goto(BASE+'agendamento.html',wait_until='networkidle')
  page.wait_for_url('**/nail-design.html#portfolio')
  record('Legacy booking address redirects to portfolio')

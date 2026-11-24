@@ -1,6 +1,6 @@
-﻿# Studio Milana Pirre
+# Studio Milana Pirre
 
-Prévia estática com loja de perfumes e landing page de Nail Design. A revisão atual é local e aguarda avaliação do usuário antes de qualquer publicação no GitHub Pages.
+Prévia estática com loja de perfumes e landing page de Nail Design. Publicação da revisão editorial autorizada pelo usuário em 24/11/2026, após apresentação da prévia local.
 
 ## Abrir a prévia
 
@@ -18,7 +18,7 @@ Acesse http://127.0.0.1:8765 e encerre o servidor com Ctrl+C.
 
 - **Perfumaria:** busca, categorias, filtros, ordenação, página de produto, sacola e checkout demonstrativo. Os atalhos comerciais de WhatsApp foram removidos do produto, da sacola e da confirmação.
 - **Nail Design:** uma landing page com portfólio ampliável, perfil da profissional e quatro serviços. Não há calendário, seleção de horários ou reserva. `agendamento.html` apenas redireciona antigos links ao portfólio.
-- **Página inicial:** faixa contínua de perfumes, controles anterior/próximo e pausa. O movimento para com hover, foco, interação por toque, aba oculta ou faixa fora da tela. A preferência por movimento reduzido desativa a rolagem automática e os fades.
+- **Página inicial:** vitrine manual com controles anterior/próximo, gesto de deslizar e teclado. Quatro produtos por vez no desktop, dois no celular, sem movimento automático. A preferência por movimento reduzido desativa os fades e a rolagem suave.
 - **Promoções demonstrativas:** Ambre Lumière e Soleil Doré exibem faixa diagonal fina e preço anterior riscado. A sacola e o checkout usam o preço atual.
 
 Os dados de produtos e preços são fictícios. Não há cobrança, envio de pedido, estoque real ou reserva. A logo original foi preservada. Nenhuma nova imagem foi gerada nesta revisão.
@@ -47,7 +47,7 @@ Em `assets/js/config.js`, os contatos oficiais começam vazios. O Instagram e o 
 | `carrinho.html` | Quantidades, remoção e totais |
 | `checkout.html` | Compra simulada |
 | `nail-design.html` | Perfil, portfólio e serviços |
-| `assets/js/home.js` | Faixa contínua e controles |
+| `assets/js/home.js` | Vitrine manual e controles |
 | `assets/js/nail-design.js` | Conteúdo da landing page e ampliação de fotos |
 | `assets/js/app.js` | Navegação, diálogos, sacola e fades |
 | `assets/js/commerce.js` | Fluxo da loja |
@@ -57,9 +57,9 @@ Em `assets/js/config.js`, os contatos oficiais começam vazios. O Instagram e o 
 
 - 29 grupos de regressão comercial aprovados, incluindo HTTP, file://, armazenamento bloqueado e dados malformados.
 - 9 verificações de navegação, diálogos, links e confirmação aprovadas.
-- 15 grupos de verificações de landing page e movimento aprovados: seis páginas em 360/390/430/1440 px, portfólio, foco, âncoras, movimento reduzido, pausa, continuidade da faixa, preço promocional e redirecionamento legado.
+- 14 grupos de verificações de landing page e movimento aprovados: seis páginas em 360/390/430/1440 px, portfólio, foco, âncoras, movimento reduzido, navegação manual e ausência de movimento automático, preço promocional e redirecionamento legado.
 - Nenhum erro JavaScript; nenhuma rolagem horizontal indevida do documento. A faixa tem rolagem horizontal intencional dentro de seu próprio quadro.
-- Capturas da revisão em `docs/screenshots/review/`, inspecionadas em mobile e desktop.
+- Capturas da revisão em `docs/screenshots/editorial/`, inspecionadas em mobile e desktop.
 
 ```powershell
 python -m pip install playwright
@@ -74,6 +74,9 @@ Testes com Chrome instalado em `C:\Program Files\Google\Chrome\Application\chrom
 
 Permanecem necessários: catálogo, preços e estoque reais; gateway de pagamento, pedidos e frete no servidor; dados oficiais da empresa; nome, biografia, retrato e trabalhos autorizados da profissional; contatos e políticas comerciais. Para gerenciar o portfólio sem editar código, conectar um CMS ou painel com autenticação e armazenamento de mídia.
 
-O site publicado anteriormente está em https://rodrigosegobia.github.io/studio-milana-pirre/. Esta revisão só deve ser enviada após a avaliação solicitada pelo usuário.
+Site: https://rodrigosegobia.github.io/studio-milana-pirre/.
 
 Skills aplicadas no projeto: frontend-design, impeccable, ui-ux-pro-max e sites. Playwright foi usado para verificação. Imagegen foi usado em uma etapa antiga; seus resultados foram retirados e nenhuma fotografia gerada integra esta revisão. O controle de computador integrado estava indisponível; a prévia local pode ser aberta diretamente no navegador.
+
+## Direção editorial atual
+Hero com duas fotografias e prioridade de escala para perfumaria. Cabeçalho mais compacto, categorias tipográficas e mensagem institucional própria substituem a faixa de marcas externas. Landing Nail Design mantém perfil, portfólio e serviços sem agenda. Home e landing também verificadas em 640, 768 e 1024 px; ambas as ações do hero ficam acima da navegação inferior no celular. Detalhes do fechamento em docs/review.md.

@@ -2,47 +2,27 @@
   'use strict';
   const track = document.getElementById('featured-products');
   if (!track) return;
-  const S = window.Studio, preference = matchMedia('(prefers-reduced-motion: reduce)');
-  track.innerHTML = `<div class="perfume-loop-group">${window.STUDIO_DATA.products.map(S.productCard).join('')}</div>`;
-  const original = track.firstElementChild, copy = original.cloneNode(true);
-  copy.setAttribute('aria-hidden', 'true');
-  copy.querySelectorAll('a,button').forEach(el => el.tabIndex = -1);
-  track.append(copy);
-  const pause = document.getElementById('perfume-pause');
+  const S = window.Studio, reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  track.innerHTML = window.STUDIO_DATA.products.map(S.productCard).join('');
   const previous = document.getElementById('perfume-prev'), next = document.getElementById('perfume-next');
   previous.innerHTML = S.icon('chevron-left'); next.innerHTML = S.icon('chevron-right');
-  let paused = preference.matches, visible = false, hovering = false, focused = false;
-  let frame = 0, last = 0, position = 0;
-  const span = () => copy.offsetLeft - original.offsetLeft;
-  const running = () => !paused && !preference.matches && visible && !hovering && !focused && !document.hidden;
-  function tick(time) {
-    frame = 0;
-    if (!running()) return;
-    const width = span();
-    if (last && width) { position = (position + Math.min(time - last, 50) * .018) % width; track.scrollLeft = position; }
-    last = time; frame = requestAnimationFrame(tick);
+  const cards = [...track.children];
+  function update() {
+    previous.disabled = track.scrollLeft < 4;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    const bounds = track.getBoundingClientRect();
+    const visible = cards.map((card,i) => ({i,r:card.getBoundingClientRect()})).filter(({r}) => r.left >= bounds.left - 4 && r.right <= bounds.right + 4);
+    if (visible.length) document.getElementById('shelf-position').textContent = `${visible[0].i + 1}–${visible.at(-1).i + 1} / ${cards.length}`;
   }
-  function sync() {
-    pause.textContent = preference.matches ? 'Movimento reduzido' : paused ? 'Retomar movimento' : 'Pausar movimento';
-    pause.disabled = preference.matches;
-    if (running() && !frame) { position = track.scrollLeft; last = 0; frame = requestAnimationFrame(tick); }
-    else if (!running() && frame) { cancelAnimationFrame(frame); frame = 0; last = 0; }
-  }
-  pause.addEventListener('click', () => { paused = !paused; sync(); });
-  track.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovering = true; sync(); } });
-  track.addEventListener('pointerleave', () => { hovering = false; sync(); });
-  track.addEventListener('pointerdown', event => { if (event.pointerType !== 'mouse') { paused = true; sync(); } });
-  track.addEventListener('focusin', () => { focused = true; sync(); });
-  track.addEventListener('focusout', () => { queueMicrotask(() => { focused = track.contains(document.activeElement); sync(); }); });
   function step(direction) {
-    paused = true; sync();
-    const width = span(), distance = original.firstElementChild.getBoundingClientRect().width + 24;
-    if (width) track.scrollLeft = (track.scrollLeft + direction * distance + width) % width;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const unit = cards[0].getBoundingClientRect().width + gap;
+    const count = Math.max(1, Math.floor((track.clientWidth + gap) / unit));
+    track.scrollBy({ left:direction * unit * count, behavior:reduced.matches ? 'instant' : 'smooth' });
   }
   previous.addEventListener('click', () => step(-1)); next.addEventListener('click', () => step(1));
-  track.addEventListener('keydown', event => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); step(event.key === 'ArrowRight' ? 1 : -1); } });
-  new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }, { threshold: .05 }).observe(track);
-  preference.addEventListener('change', () => { paused = preference.matches; sync(); });
-  document.addEventListener('visibilitychange', sync);
-  sync();
+  track.addEventListener('keydown', event => { if (['ArrowLeft','ArrowRight'].includes(event.key)) { event.preventDefault(); step(event.key === 'ArrowRight' ? 1 : -1); } });
+  track.addEventListener('scroll', update, { passive:true });
+  new ResizeObserver(update).observe(track);
+  update();
 })();

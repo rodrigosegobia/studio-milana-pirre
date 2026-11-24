@@ -19,3 +19,6 @@ A indicação automática de Liquid Glass da busca de design foi descartada por 
 
 ## Revisão da landing page
 A identidade existente é preservada. A galeria lidera a descoberta, com ampliação de fotografias; o perfil utiliza a logo até receber o retrato autorizado. Não há agenda ou fluxo de reserva. A home usa rolagem horizontal contínua de 18 px/s, pausável e suspensa durante foco, hover, aba oculta e fora de viewport. Movimento reduzido oferece navegação manual. Faixas diagonais de promoção usam champanhe e preço anterior, sem urgência fictícia.
+
+## Luxury Editorial Beauty Boutique — revisão atual
+Preservados logo, paleta, Bodoni Moda e Manrope. A home apresenta os dois universos no hero por um díptico assimétrico, com perfumaria em maior escala. Categorias tipográficas, vitrine manual sem duplicações ou autoplay, preços alinhados e marca Studio Milana Pirre no centro da narrativa. A faixa automática da revisão anterior foi substituída por decisão criativa autorizada; seus registros anteriores são históricos. Nail Design permanece institucional. A implementação usa editorial.css, sem dependências novas. Prévia local para aprovação, sem publicação nesta rodada.

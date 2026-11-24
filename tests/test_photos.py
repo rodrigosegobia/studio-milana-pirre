@@ -36,6 +36,8 @@ with sync_playwright() as playwright:
                 for route in ROUTES:
                     page.goto(urljoin(base, route), wait_until="load")
                     page.wait_for_function("!!window.Studio")
+                    if route == "nail-design.html":
+                        page.locator('[data-photo="0"]').click()
                     page.evaluate("""async () => {
                       const images = [...document.images];
                       images.forEach(image => { image.loading = 'eager'; });

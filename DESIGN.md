@@ -265,3 +265,6 @@ Diálogos off-white têm cantos retos, largura máxima de 560px, padding de 24px
 
 ## Refinamento da apresentação
 Nail Design usa `nail-design.css`: hero, portfólio com fotos ampliáveis, perfil e quatro serviços. Sem calendário. A home usa uma faixa contínua de 18 px/s, com pausa por botão, foco, hover e movimento reduzido. Botões deslocam no máximo 2 px no hover; fades usam 12 px e 700 ms. Produtos em promoção têm `compareAt` maior que `price`, faixa diagonal champanhe e preço anterior riscado. O preço atual é utilizado em todos os cálculos.
+
+## Luxury Editorial Beauty Boutique — revisão atual
+Preservados logo, paleta, Bodoni Moda e Manrope. A home apresenta os dois universos no hero por um díptico assimétrico, com perfumaria em maior escala. Categorias tipográficas, vitrine manual sem duplicações ou autoplay, preços alinhados e marca Studio Milana Pirre no centro da narrativa. A faixa automática da revisão anterior foi substituída por decisão criativa autorizada; seus registros anteriores são históricos. Nail Design permanece institucional. A implementação usa editorial.css, sem dependências novas. Prévia local para aprovação, sem publicação nesta rodada.

@@ -33,3 +33,6 @@ O usuário forneceu J:\Curso\logo.png e solicitou seu uso. A cópia em assets/im
 
 ## Revisão solicitada
 Nail Design é exclusivamente uma landing page com perfil, serviços e portfólio; agendamento removido. Compras de perfumes permanecem no site, sem atalhos comerciais de WhatsApp. Home com faixa contínua pausável, movimento reduzido, fades discretos e promoções demonstrativas em dois produtos. Mostrar prévia local antes de publicar.
+
+## Luxury Editorial Beauty Boutique — revisão atual
+Preservados logo, paleta, Bodoni Moda e Manrope. A home apresenta os dois universos no hero por um díptico assimétrico, com perfumaria em maior escala. Categorias tipográficas, vitrine manual sem duplicações ou autoplay, preços alinhados e marca Studio Milana Pirre no centro da narrativa. A faixa automática da revisão anterior foi substituída por decisão criativa autorizada; seus registros anteriores são históricos. Nail Design permanece institucional. A implementação usa editorial.css, sem dependências novas. Prévia local para aprovação, sem publicação nesta rodada.

@@ -1,15 +1,32 @@
-﻿# Revisão da landing page e movimento
+﻿# Revisão editorial — prévia local
 
-**Pronta para avaliação local. Publicação pendente da avaliação solicitada pelo usuário.**
+## Resultado
 
-A identidade existente foi preservada: logo original, Bodoni Moda, Manrope, preto, champanhe e fotografias reais. Nail Design agora tem hero, galeria ampliável, perfil e serviços na mesma página. O perfil usa uma apresentação provisória e a logo até receber os dados autorizados da profissional. Não foi inventado nome, retrato ou currículo.
+Prévia local apresentada e publicação autorizada pelo usuário em 24/11/2026. Os resultados abaixo registram a validação anterior à publicação.
 
-O agendamento foi removido da navegação, da configuração e dos scripts. O endereço antigo redireciona para o portfólio. A compra de perfumes permanece no site, sem os três atalhos comerciais de WhatsApp.
+A primeira dobra agora apresenta perfumaria e Nail Design em duas fotografias de escalas diferentes, com prioridade comercial da perfumaria e ações explícitas. A identidade existente permanece: logo original, paleta e fontes locais. O cabeçalho tem menor altura e quatro destinos principais; categorias e filtros continuam acessíveis.
 
-Na home, seis perfumes circulam a 18 px/s em uma faixa com pausa e navegação manual. Hover, foco, interação por toque, aba oculta e faixa fora da tela suspendem o movimento. Movimento reduzido mantém a faixa manual e desliga os fades. As animações são discretas: até 2 px nos botões e 12 px no fade de seções. As etiquetas diagonais de promoção são finas e restritas a dois produtos; preço anterior e atual aparecem sem urgência fictícia.
+A vitrine automática foi substituída por uma faixa manual com snap, controles e teclado. Não há produtos duplicados no DOM. O usuário pode comparar nomes, volumes e preços sem movimento involuntário. Promoções demonstrativas permanecem discretas; o preço atual continua usado pela sacola e checkout.
 
-Verificações desta revisão: 29 grupos comerciais, 9 de navegação e 15 da landing page/movimento aprovados. As seis páginas foram verificadas em 360, 390, 430 e 1440 px, sem overflow do documento ou erros JavaScript. A faixa horizontal é intencional e permanece contida. Testadas pausa, continuidade na transição do último ao primeiro produto, preços da sacola, abertura de foto, Escape e retorno de foco.
+A faixa de marcas externas foi substituída por uma apresentação do próprio Studio Milana Pirre. O bloco institucional conecta os dois segmentos antes do editorial de unhas. A landing Nail Design foi refinada com hero mais compacto, galeria assimétrica, serviços e perfil provisório, sem agenda.
 
-Capturas em `docs/screenshots/review/` mostram a versão atual. A inspeção visual verificou a hierarquia da home, o perfil, o portfólio e a legibilidade da faixa de promoção. Nenhuma imagem foi gerada. O site não foi enviado ao GitHub nesta revisão.
+## Inspeção e correções
 
-Limites: Chrome headless e inspeção de capturas; sem aparelho físico, Safari, Firefox ou leitor de tela real. Publicação autônoma de trabalhos requer CMS ou painel, conforme README. A página está pronta para exibir conteúdo inserido no arquivo de dados.
+Capturas atuais em docs/screenshots/editorial. Inspecionados hero desktop/mobile, home completa, vitrine e landing Nail Design. Durante a inspeção foram corrigidos: altura mínima antiga que alongava o hero desktop, corte da logo no perfil mobile, palavras concatenadas ao esconder quebras de linha e desalinhamento entre preços com e sem promoção. A família olfativa e o volume saíram da fotografia para uma linha de informação própria.
+
+O hero de ambas as páginas foi medido em 360, 390, 430, 640, 768, 1024 e 1440 px. As ações principais ficaram visíveis na primeira dobra, sem sobreposição da navegação inferior. Nenhum overflow horizontal do documento foi identificado. A vitrine usa rolagem horizontal contida e intencional.
+
+## Testes
+
+- 29 grupos de comércio aprovados: filtros, busca, galeria, quantidades, totais, remoção, checkout, HTTP, file:// e armazenamento bloqueado/malformado.
+- 9 verificações compartilhadas aprovadas: navegação, nomes de diálogos, teclado, foco, contatos demonstrativos, links e confirmação.
+- 14 grupos de landing/vitrine aprovados: seis páginas em quatro larguras, portfólio, retorno de foco, âncoras, redução de movimento, navegação manual, ausência de autoplay, preço promocional e redirecionamento legado.
+- 12 cenários de fallback aprovados com o CDN bloqueado: HTTP mobile/desktop e file://, incluindo foto ampliada da galeria. As 60 falhas de rede provocadas foram recuperadas localmente; nenhum erro JavaScript ou falha local.
+
+O teste de fallback passou a abrir a galeria antes de validar sua imagem: o elemento vazio de um diálogo fechado não representa uma fotografia quebrada.
+
+## Avaliação crítica e limites
+
+A hierarquia comercial está mais clara, a primeira dobra já apresenta os dois segmentos e a marca assume a narrativa. A navegação manual melhora a leitura dos produtos. O resultado não deve ser considerado identidade comercial definitiva: fotografias de referência ainda se repetem entre fragrâncias, e faltam retrato, biografia, catálogo e portfólio oficiais. Essas lacunas estão identificadas na interface e não foram preenchidas com informações inventadas.
+
+Verificação em Chrome headless e capturas, sem aparelho físico, Safari, Firefox ou leitor de tela real. Não há backend de pagamentos/pedidos nem painel de edição de portfólio. Nenhuma imagem foi gerada, nenhuma tecnologia foi migrada e não foram adicionadas dependências.
