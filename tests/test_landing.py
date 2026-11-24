@@ -45,7 +45,8 @@ with sync_playwright() as p:
   page.locator('#featured-products').scroll_into_view_if_needed()
   left=page.locator('#featured-products').evaluate('(e)=>e.scrollLeft');page.wait_for_timeout(400)
   assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')==left
-  page.locator('#perfume-next').click()
+  expect(page.locator('#perfume-prev, #perfume-next, #shelf-position')).to_have_count(0)
+  page.locator('#featured-products').focus();page.keyboard.press('ArrowRight')
   assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')>left
   record(f'{width}px: ribbons, reduced motion and manual navigation')
   context.close()
@@ -55,9 +56,9 @@ with sync_playwright() as p:
  page.locator('#featured-products').scroll_into_view_if_needed();page.mouse.move(0,0);page.wait_for_timeout(250)
  initial=page.locator('#featured-products').evaluate('(e)=>e.scrollLeft');page.wait_for_timeout(700)
  assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')==initial
- page.locator('#perfume-next').click();page.wait_for_timeout(550)
+ page.locator('#featured-products').focus();page.keyboard.press('ArrowRight');page.wait_for_timeout(550)
  assert page.locator('#featured-products').evaluate('(e)=>e.scrollLeft')>initial
- page.locator('#perfume-prev').click();page.wait_for_timeout(550)
+ page.keyboard.press('ArrowLeft');page.wait_for_timeout(550)
  page.locator('#featured-products [data-add-product="ambre"]').click()
  assert page.evaluate('Studio.cartTotal()')==389
  record('Manual navigation, no autoplay and promotional cart price')

@@ -4,25 +4,50 @@
   if (!track) return;
   const S = window.Studio, reduced = matchMedia('(prefers-reduced-motion: reduce)');
   track.innerHTML = window.STUDIO_DATA.products.map(S.productCard).join('');
-  const previous = document.getElementById('perfume-prev'), next = document.getElementById('perfume-next');
-  previous.innerHTML = S.icon('chevron-left'); next.innerHTML = S.icon('chevron-right');
   const cards = [...track.children];
-  function update() {
-    previous.disabled = track.scrollLeft < 4;
-    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
-    const bounds = track.getBoundingClientRect();
-    const visible = cards.map((card,i) => ({i,r:card.getBoundingClientRect()})).filter(({r}) => r.left >= bounds.left - 4 && r.right <= bounds.right + 4);
-    if (visible.length) document.getElementById('shelf-position').textContent = `${visible[0].i + 1}–${visible.at(-1).i + 1} / ${cards.length}`;
-  }
-  function step(direction) {
+  track.addEventListener('keydown', event => {
+    if (event.target !== track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
     const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
     const unit = cards[0].getBoundingClientRect().width + gap;
     const count = Math.max(1, Math.floor((track.clientWidth + gap) / unit));
-    track.scrollBy({ left:direction * unit * count, behavior:reduced.matches ? 'instant' : 'smooth' });
+    track.scrollBy({left:(event.key === 'ArrowRight' ? 1 : -1) * unit * count, behavior:reduced.matches ? 'instant' : 'smooth'});
+  });
+
+  const hero = document.querySelector('.campaign-hero');
+  const discovery = document.querySelector('.home-discovery');
+  if (!hero || !discovery) return;
+  const clamp = value => Math.max(0, Math.min(1, value));
+  const ease = value => value * value * (3 - 2 * value);
+  let frame = 0;
+
+  function renderScroll() {
+    frame = 0;
+    if (reduced.matches) {
+      hero.style.removeProperty('--hero-blur');
+      hero.style.removeProperty('--hero-opacity');
+      discovery.style.removeProperty('--discovery-blur');
+      discovery.style.removeProperty('--discovery-opacity');
+      hero.classList.remove('is-scroll-transitioning');
+      discovery.classList.remove('is-scroll-transitioning');
+      return;
+    }
+    const heroBounds = hero.getBoundingClientRect();
+    const exit = ease(clamp(-heroBounds.top / (heroBounds.height * .85)));
+    const entry = ease(clamp((innerHeight - discovery.getBoundingClientRect().top) / (innerHeight * .55)));
+    hero.style.setProperty('--hero-blur', (exit * 3).toFixed(2) + 'px');
+    hero.style.setProperty('--hero-opacity', (1 - exit * .4).toFixed(3));
+    discovery.style.setProperty('--discovery-blur', ((1 - entry) * 5).toFixed(2) + 'px');
+    discovery.style.setProperty('--discovery-opacity', (.55 + entry * .45).toFixed(3));
+    hero.classList.toggle('is-scroll-transitioning', exit > 0 && exit < 1);
+    discovery.classList.toggle('is-scroll-transitioning', entry > 0 && entry < 1);
   }
-  previous.addEventListener('click', () => step(-1)); next.addEventListener('click', () => step(1));
-  track.addEventListener('keydown', event => { if (['ArrowLeft','ArrowRight'].includes(event.key)) { event.preventDefault(); step(event.key === 'ArrowRight' ? 1 : -1); } });
-  track.addEventListener('scroll', update, { passive:true });
-  new ResizeObserver(update).observe(track);
-  update();
+  function scheduleScroll() {
+    if (!frame) frame = requestAnimationFrame(renderScroll);
+  }
+  addEventListener('scroll', scheduleScroll, {passive:true});
+  addEventListener('resize', scheduleScroll, {passive:true});
+  addEventListener('pageshow', scheduleScroll);
+  reduced.addEventListener('change', scheduleScroll);
+  renderScroll();
 })();

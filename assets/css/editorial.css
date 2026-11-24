@@ -1,14 +1,18 @@
 /* Campaign storefront: compact on phones, led by the requested reference. */
-.campaign-hero{position:relative;isolation:isolate;display:flex;align-items:flex-end;justify-content:center;height:clamp(390px,55svh,480px);min-height:0;background:#826d51;overflow:hidden;color:#fff;text-align:center}
+.campaign-hero{position:relative;isolation:isolate;display:flex;align-items:flex-end;justify-content:center;height:100vh;height:100svh;min-height:0;background:#826d51;overflow:hidden;color:#fff;text-align:center}
 .campaign-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 63%;z-index:-2}
 .campaign-hero::after,.nail-campaign::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0008 0%,#0001 35%,#0003 50%,#000d 100%);pointer-events:none}
-.campaign-copy{width:100%;padding:0 24px 30px}
+.campaign-copy{width:100%;padding:0 24px calc(var(--mobile-nav-height) + 32px)}
 .campaign-copy h1{font:600 1.6rem/1.2 var(--font-body);letter-spacing:-.025em;max-width:20ch;margin:0 auto 12px;text-wrap:balance}
 .campaign-copy p{font-size:.8125rem;line-height:1.6;margin:0 auto 14px;color:#fff}
 .campaign-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
 .campaign-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-size:.8125rem;font-weight:600;text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px;color:inherit}
 .campaign-link:hover{text-decoration-thickness:2px}
 .campaign-link:focus-visible,body[data-page="inicio"] .site-header :focus-visible{outline-color:#fff}
+.campaign-photo{filter:blur(var(--hero-blur,0px));opacity:var(--hero-opacity,1);transform:scale(1.015);transition:filter .14s ease-out,opacity .14s ease-out}
+.home-discovery{background:#fff;filter:blur(var(--discovery-blur,0px));opacity:var(--discovery-opacity,1);transition:filter .18s ease-out,opacity .18s ease-out}
+.home-discovery:focus-within{filter:none;opacity:1}
+.is-scroll-transitioning .campaign-photo,.home-discovery.is-scroll-transitioning{will-change:filter,opacity}
 .category-strip{border-bottom:1px solid var(--line);overflow:hidden;background:#fff}
 .category-links{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:24px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;padding:0 20px;max-width:1280px;margin:auto}
 .category-links::-webkit-scrollbar{display:none}
@@ -25,10 +29,6 @@
 .perfume-shelf .product-card-info{display:flex;flex-direction:column;flex:1;padding-top:10px}
 .perfume-shelf .product-card-bottom{margin-top:auto}
 .shelf-bottom{display:grid;gap:16px;margin-top:18px}
-.shelf-controls{display:flex;align-items:center;justify-content:center;gap:14px}
-.shelf-controls>span{font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums;min-width:54px;text-align:center}
-.shelf-controls .icon-button{border:1px solid var(--line)}
-.shelf-controls .icon-button:disabled{opacity:.3;cursor:default}
 .shelf-bottom>.btn{justify-self:center;min-width:220px;font-size:.75rem}
 .shelf-bottom .demo-note{text-align:center;font-size:.6875rem;line-height:1.55;max-width:60ch;margin:auto}
 .nail-campaign{display:flex;isolation:isolate;position:relative;align-items:flex-end;justify-content:center;height:260px;overflow:hidden;background:#d4bcb4;color:#fff;text-align:center}
@@ -42,16 +42,17 @@
 .studio-statement p{font-size:.8125rem;line-height:1.75;color:var(--muted);max-width:58ch;margin:0 auto}
 .studio-statement .text-link{font-size:.75rem;margin-top:12px}
 @media(min-width:640px){
- .campaign-hero{height:580px}.campaign-copy{padding-bottom:44px}.campaign-copy h1{font-size:2rem;max-width:none}.campaign-copy p{font-size:.9375rem}.campaign-link{font-size:.875rem}
+ .campaign-copy{padding-bottom:calc(var(--mobile-nav-height) + 44px)}.campaign-copy h1{font-size:2rem;max-width:none}.campaign-copy p{font-size:.9375rem}.campaign-link{font-size:.875rem}
  .category-links{justify-content:center;gap:42px}.category-links a{min-height:64px;font-size:.8125rem}
  .selection-section{padding-block:42px 44px}.selection-section .section-heading{margin-bottom:26px}.selection-section .section-heading h2{font-size:1.65rem}
  .perfume-shelf{gap:20px}.perfume-shelf>.product-card{flex-basis:calc((100% - 40px)/3)}
  .shelf-bottom{gap:20px}.nail-campaign{height:350px}.nail-campaign h2{font-size:1.8rem}.nail-campaign-copy{padding-bottom:34px}.studio-statement{padding-block:40px}
 }
 @media(min-width:1000px){
- .campaign-hero{height:min(690px,76vh);min-height:500px}.campaign-photo{object-position:50% 84%}.campaign-copy h1{font-size:2.2rem}.campaign-copy{padding-bottom:42px}
+ .campaign-photo{object-position:50% 84%}.campaign-copy h1{font-size:2.2rem}.campaign-copy{padding-bottom:42px}
  .selection-section{padding-block:48px}.perfume-shelf{gap:24px}.perfume-shelf>.product-card{flex-basis:calc((100% - 72px)/4)}
  .selection-section .product-photo{aspect-ratio:1/1.06}.nail-campaign{height:400px}.nail-campaign>img{object-position:50% 47%}.nail-campaign h2{font-size:2rem}
  .studio-statement h2{font-size:1.5rem}.studio-statement p{font-size:.875rem}
 }
-@media(max-height:500px) and (max-width:899px){.campaign-hero{height:330px;min-height:0}.campaign-copy{padding-bottom:18px}.campaign-copy h1{font-size:1.6rem}.campaign-photo{object-position:50% 75%}}
+@media(max-height:500px) and (max-width:899px){.campaign-copy{padding-bottom:calc(var(--mobile-nav-height) + 16px)}.campaign-copy h1{font-size:1.6rem}.campaign-photo{object-position:50% 75%}}
+@media(prefers-reduced-motion:reduce){.campaign-photo,.home-discovery{filter:none!important;opacity:1!important;transition:none!important}.campaign-photo{transform:none}}

@@ -1,6 +1,6 @@
 # Studio Milana Pirre
 
-Prévia estática com loja de perfumes e landing page de Nail Design. Revisão mobile aprovada pelo usuário para publicação em 24/11/2026, após apresentação local.
+Prévia estática com loja de perfumes e landing page de Nail Design. Ajustes de navegação, abertura e apresentação profissional aprovados pelo usuário para publicação em 24/11/2026.
 
 ## Abrir a prévia
 
@@ -18,7 +18,7 @@ Acesse http://127.0.0.1:8765 e encerre o servidor com Ctrl+C.
 
 - **Perfumaria:** busca, categorias, filtros, ordenação, página de produto, sacola e checkout demonstrativo. Os atalhos comerciais de WhatsApp foram removidos do produto, da sacola e da confirmação.
 - **Nail Design:** uma landing page com portfólio ampliável, perfil da profissional e quatro serviços. Não há calendário, seleção de horários ou reserva. `agendamento.html` apenas redireciona antigos links ao portfólio.
-- **Página inicial:** vitrine manual com controles anterior/próximo, gesto de deslizar e teclado. Quatro produtos por vez no desktop, dois no celular, sem movimento automático. A preferência por movimento reduzido desativa os fades e a rolagem suave.
+- **Página inicial:** foto de abertura em tela inteira, sem faixa superior, e transição gradual de fade/desfoque ao rolar. Vitrine manual por deslize e teclado, sem contador ou setas visuais. Quatro produtos por vez no desktop e dois no celular, sem movimento automático. A preferência por movimento reduzido desativa os efeitos.
 - **Promoções demonstrativas:** Ambre Lumière e Soleil Doré exibem faixa diagonal fina e preço anterior riscado. A sacola e o checkout usam o preço atual.
 
 Os dados de produtos e preços são fictícios. Não há cobrança, envio de pedido, estoque real ou reserva. A logo original foi preservada. Nenhuma nova imagem foi gerada nesta revisão.
@@ -60,7 +60,7 @@ Em `assets/js/config.js`, os contatos oficiais começam vazios. O Instagram e o 
 - 14 grupos de verificações de landing page e movimento aprovados: seis páginas em 360/390/430/1440 px, portfólio, foco, âncoras, movimento reduzido, navegação manual e ausência de movimento automático, preço promocional e redirecionamento legado.
 - Nenhum erro JavaScript; nenhuma rolagem horizontal indevida do documento. A faixa tem rolagem horizontal intencional dentro de seu próprio quadro.
 - Capturas atuais em `docs/screenshots/mobile-reset/`, inspecionadas em mobile e desktop.
-- 9 grupos adicionais de escala, conteúdo visível e toque em sete dimensões, incluindo 320 px e orientação horizontal. Rodar com `python tests/test_mobile.py`.
+- 12 grupos adicionais de escala, barra fixa, toque, serviços, perfil e transição de scroll em sete dimensões, incluindo 320 px e orientação horizontal. Rodar com `python tests/test_mobile.py`.
 
 ```powershell
 python -m pip install playwright
@@ -80,4 +80,4 @@ Site: https://rodrigosegobia.github.io/studio-milana-pirre/.
 Skills aplicadas no projeto: frontend-design, impeccable, ui-ux-pro-max e sites. Playwright foi usado para verificação. Imagegen foi usado em uma etapa antiga; seus resultados foram retirados e nenhuma fotografia gerada integra esta revisão. O controle de computador integrado estava indisponível; a prévia local pode ser aberta diretamente no navegador.
 
 ## Direção atual
-Revisão mobile baseada na referência Carolina Herrera escolhida pelo usuário: campanha fotográfica, título curto sobreposto, cabeçalho compacto, categorias horizontais, vitrine com dois produtos visíveis e portfólio em duas colunas no celular. Barra inferior fixa e revelações que ocultavam conteúdo foram retiradas. Imagens têm limites explícitos de tamanho; catálogo, sacola e checkout permanecem funcionais. Detalhes em DESIGN.md e docs/review.md.
+Campanha da home em tela inteira e sem faixa superior; barra inferior mobile restaurada. Nas páginas internas, cabeçalho preto com logo branca. Nail Design com serviços organizados, detalhes expansíveis e caixa de apresentação profissional, sem agendamento. Catálogo, sacola e checkout permanecem funcionais. Detalhes em DESIGN.md e docs/review.md.

@@ -1,36 +1,32 @@
-# Revisão mobile — 24/11/2026
+# Revisão — barra fixa, abertura e Nail Design
 
-## Motivo e referência
+Ajustes locais solicitados após a última publicação, em 24/11/2026.
 
-A composição anterior foi rejeitada pelo usuário por escala inadequada e experiência ruim no celular. A nova direção segue a estrutura observada em https://www.carolinaherrera.com/br/pt: campanha de ponta a ponta, cabeçalho sobre a fotografia, títulos sans curtos, links sublinhados, categorias horizontais e apresentação compacta da loja.
+## Resultado
 
-Mantidos logo, arquivos de fonte, paleta base, fotografias reais, fallbacks e funcionalidades. Sem imagens geradas ou dependências novas.
+- Barra inferior mobile restaurada com quatro destinos, contagem da sacola, área segura e reserva de espaço para rodapé, foco e avisos.
+- Home sem a faixa superior demonstrativa. Abertura em 100svh, imagem desde a borda superior e ações acima da barra inferior.
+- Vitrine sem contador e sem botões de setas; navegação por deslize e teclas de direção preservada.
+- Ao rolar, a fotografia da abertura suaviza e a descoberta ganha nitidez gradualmente. Valores registrados: blur de 5 px até 0 e opacidade de .55 até 1. Foco deixa a área nítida; redução de movimento mantém tudo estático e claro.
+- Páginas internas com cabeçalho preto e logo branca original.
+- Nail Design com quatro serviços organizados em blocos, descrição e informações expansíveis. Caixa profissional com área para retrato, identificação, biografia, especialidades e ações. Sem agendamento e sem dados pessoais inventados.
 
-## Alterações e correções
+## Validação
 
-- Home de aproximadamente 4.300 para 2.080 px de altura em 390 px de largura.
-- Cabeçalho de 72 px mobile; navegação inferior fixa retirada.
-- Hero limitado a 480 px; imagens de produto em torno de 187 px no mobile de 390 px. Nail Design na home: 260 px; hero da landing: 200 px.
-- Portfólio em duas colunas no celular, com ampliação por toque.
-- Títulos, espaços e rodapé reduzidos; catálogo sem fotografia de abertura.
-- Removida a lógica que deixava seções com opacidade quase zero até a interseção de scroll.
-- CSS e app.js com versão na URL para evitar apresentação híbrida com arquivos antigos em cache.
-- Galeria de produto com altura controlada e fotografia inteira, sem corte por cover.
+- 29 grupos comerciais aprovados: busca, filtros, quantidades, sacola, checkout e armazenamento.
+- 9 verificações de navegação e diálogos aprovadas.
+- 14 grupos de landing, portfólio, promoções e vitrine aprovados.
+- 12 cenários de fallback de imagens aprovados.
+- 12 grupos de mobile, toque, serviços e scroll aprovados, incluindo seis rotas em 320×667, 360×740, 390×844, 430×932, 844×390, 768×1024 e 1440×900.
+- Altura total da abertura, ausência de faixa na home, ações acima da navegação, teclado e foco na descoberta verificados. Nenhum overflow horizontal indevido ou erro de JavaScript detectado.
+- git diff --check aprovado.
 
-## Verificação
+Capturas em docs/screenshots/mobile-reset e docs/screenshots/scroll-nav. Movimento comparado em quatro posições de scroll, com e sem redução de movimento. A ferramenta interna motion-capture não existe na versão instalada; foram usados Chrome e Playwright para obter frames e medições equivalentes. Revisão independente aprovou a continuidade visual nos estados capturados, sem inferir FPS ou desempenho em aparelho físico. A apresentação de Nail Design também foi revisada visualmente em mobile e desktop.
 
-- 29 grupos de comércio aprovados.
-- 9 verificações compartilhadas de navegação e diálogos aprovadas.
-- 14 grupos da landing e vitrine aprovados.
-- 12 cenários de fallback com CDN bloqueado aprovados; 54 falhas provocadas recuperadas localmente.
-- 9 grupos adicionais de mobile aprovados: seis rotas em 320×667, 360×740, 390×844, 430×932, 844×390, 768×1024 e 1440×900; limites de imagens, conteúdo visível e ausência de overflow indevido.
-- Gestos de toque em Chrome emulado: menu, busca, swipe da vitrine, navegação anterior, produto promocional na sacola e ampliação/fechamento de fotografia com retorno de foco.
-- Zero erros JavaScript nas verificações. git diff --check aprovado.
+## Limites e publicação
 
-Capturas visuais em docs/screenshots/mobile-reset. Inspecionadas home, Nail Design, catálogo e produto em mobile e desktop. A emulação não substitui um teste em aparelho físico ou Safari real.
+Retrato, nome e biografia oficiais continuam pendentes. A logo ocupa esse espaço provisoriamente; o componente aceita os dados já previstos em data.js e recupera o placeholder se o retrato falhar. Fotografias e catálogo continuam demonstrativos.
 
-## Avaliação e publicação
+Validação em Chrome emulado, sem Safari ou aparelho físico. Nenhuma imagem foi gerada e nenhuma dependência foi adicionada.
 
-A página ficou substancialmente mais curta e a navegação mais próxima do modelo solicitado. O hero conserva fotografia com destaque, mas com limite de altura no celular. A identidade final continua limitada por fotografias ilustrativas repetidas, perfil provisório e catálogo fictício.
-
-Prévia local apresentada. Publicação desta revisão autorizada pelo usuário em 24/11/2026.
+Prévia local apresentada e publicação dos ajustes autorizada pelo usuário em 24/11/2026.

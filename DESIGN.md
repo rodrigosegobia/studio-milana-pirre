@@ -27,11 +27,11 @@ Esta direção substitui a composição editorial anterior, rejeitada pelo usuá
 ## Composição
 
 - Campanha fotográfica de ponta a ponta, título curto centralizado sobre a fotografia e links sublinhados. Cabeçalho sobreposto na home, com menu, logo original, busca e sacola.
-- Faixa superior preta de 28 px identifica os dois segmentos e a demonstração. Cabeçalho de 72 px no celular e 84 px em desktop. Nas páginas internas é branco, com a mesma logo exibida em preto por CSS.
+- A home não tem faixa superior: a foto começa na borda da tela e o cabeçalho é sobreposto. Nas páginas internas, cabeçalho preto e logo branca original, com a faixa demonstrativa existente. Cabeçalho de 72 px no celular e 84 px em desktop.
 - Categorias em uma faixa horizontal; vitrine manual com dois produtos visíveis no celular, três no tablet e quatro no desktop.
-- Hero mobile entre 390 e 480 px (55svh), limitado a 330 px na orientação horizontal curta. A referência usa campanha maior; o limite responde à reclamação de imagens gigantes.
+- Hero da home com 100svh, preenchendo a tela de entrada. Texto e CTAs reservam espaço para a barra inferior e a área segura do aparelho.
 - Campanha Nail Design de 260 px no celular, seguida de mensagem institucional curta.
-- Sem barra inferior fixa. Sem seções que dependem de animação para ficarem visíveis.
+- Barra inferior fixa restaurada no mobile, com Início, Perfumes, Nail Design e Sacola; reservados espaço no rodapé e afastamento para foco e avisos.
 
 ## Identidade e tipografia
 
@@ -45,13 +45,13 @@ Preto e branco conduzem navegação e ações. Champanhe aparece nas promoções
 
 Fotografias de produto em proporção 1:1,08 (aproximadamente 187 px de altura em tela de 390 px). Etiquetas diagonais de promoção e preço anterior continuam ativos; cálculos usam o preço atual.
 
-Nail Design mantém portfólio, quatro serviços e perfil provisório. Hero de 200 px no celular; portfólio em duas colunas com fotos de cerca de 182 px. A ampliação por toque preserva o acesso à fotografia completa. Não há agendamento.
+Nail Design apresenta quatro serviços em blocos próprios, com descrição e detalhes expansíveis; depois, uma caixa de apresentação profissional com retrato/placeholder, biografia, áreas de atuação e links. Perfil ainda provisório, sem informações pessoais inventadas. Hero de 200 px no celular; portfólio em duas colunas com fotos de cerca de 182 px. A ampliação por toque preserva o acesso à fotografia completa. Não há agendamento.
 
 O catálogo abre diretamente em título, categorias, busca e filtros. A fotografia decorativa de abertura foi removida. A galeria da página de produto tem altura de 280 px no celular, com imagem contida.
 
 ## Comportamento
 
-A faixa de produtos usa rolagem horizontal nativa, snap, setas e teclado. Não há reprodução automática. As transições se limitam a controles e zoom discreto de fotos, com prefers-reduced-motion respeitado.
+A faixa de produtos usa rolagem horizontal nativa, snap e teclas de direção, sem contador ou botões de setas. Não há reprodução automática. Ao sair da abertura, a fotografia suaviza e a descoberta ganha nitidez de blur(5px)/opacity .55 até blur(0)/opacity 1. O foco torna o conteúdo nítido; prefers-reduced-motion remove blur/fade. Sem JavaScript, os estilos padrão deixam tudo visível.
 
 CSS e app.js usam identificador de versão nas URLs para impedir a mistura de HTML novo com estilos antigos em cache. Caminhos continuam relativos e compatíveis com GitHub Pages.
 
@@ -59,4 +59,4 @@ CSS e app.js usam identificador de versão nas URLs para impedir a mistura de HT
 
 Fotos reais por URLs externas com cópias locais de fallback. Produtos e valores fictícios, perfil ainda sem dados oficiais e portfólio identificado como referência. Checkout demonstrativo; sem backend de pedidos/pagamentos nem painel de postagem.
 
-Capturas atuais: docs/screenshots/mobile-reset/. Testes de gesto e escala: tests/test_mobile.py. Publicação desta revisão aprovada pelo usuário em 24/11/2026, após apresentação local.
+Capturas atuais: docs/screenshots/mobile-reset/ e docs/screenshots/scroll-nav/. Testes de gesto e escala: tests/test_mobile.py. Publicação destes ajustes aprovada pelo usuário em 24/11/2026.
