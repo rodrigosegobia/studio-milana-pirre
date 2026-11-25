@@ -35,7 +35,7 @@ with sync_playwright() as p:
                 assert abs(page.locator('.campaign-hero').evaluate('(e)=>e.clientHeight') - height) <= 1
                 assert page.locator('.announcement').count() == 0
                 assert page.locator('#perfume-prev, #perfume-next, #shelf-position').count() == 0
-                if width < 640: assert page.locator('.nail-campaign').evaluate('(e)=>e.clientHeight') <= 260
+                if width < 640: assert page.locator('.nail-campaign-inner').evaluate('(e)=>e.clientHeight') <= 280
         checks.append(f'{width}x{height}: six routes, bounded images, no hidden sections or document overflow')
         context.close()
 
@@ -81,7 +81,7 @@ with sync_playwright() as p:
     assert page.url.endswith('#portfolio')
     checks.append('Nail Design: four organized services, expandable details and professional card linked to portfolio')
     page.locator('[data-photo="0"]').tap()
-    expect(page.get_by_role('dialog', name='Nude luminoso')).to_be_visible()
+    expect(page.get_by_role('dialog', name='Vermelho com brilho')).to_be_visible()
     page.get_by_role('button', name='Fechar fotografia').tap()
     expect(page.locator('[data-photo="0"]')).to_be_focused()
     checks.append('Touch: portfolio enlargement, close and restored focus')

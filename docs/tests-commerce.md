@@ -7,10 +7,12 @@ Execução com Python Playwright e Google Chrome headless instalado, em contexto
 | Verificação | Resultado | Evidência |
 |---|---|---|
 | 390px busca insensível a acentos | PASS | lumiere/Lumière e âmbar |
-| 390px categorias e URL persistente | PASS | Árabes: 2 produtos; Todos: 6 |
+| 390px categorias e URL persistente | PASS | Árabes: 2 produtos; Todos: 12 |
 | 390px filtros combinados de família e preço | PASS | Limite R$350 retorna Fleur de Soie e Soleil Doré |
 | 390px ordenação | PASS | menor preço, maior preço e nome |
 | 390px busca vazia e recuperação | PASS | Interações e asserções no navegador |
+| 390px busca por marcas dos seis perfumes fornecidos | PASS | Interações e asserções no navegador |
+| 390px seis perfumes: imagens, páginas, preços de prévia e sacola persistente | PASS | Interações e asserções no navegador |
 | 390px galeria por controles e teclado | PASS | Interações e asserções no navegador |
 | 390px produto sem atalho de compra por WhatsApp | PASS | Interações e asserções no navegador |
 | 390px quantidade, subtotal e ausência de WhatsApp na sacola | PASS | Interações e asserções no navegador |
@@ -18,10 +20,12 @@ Execução com Python Playwright e Google Chrome headless instalado, em contexto
 | 390px checkout validado, confirmação e sacola limpa | PASS | Interações e asserções no navegador |
 | 390px checkout vazio e produto inexistente | PASS | Interações e asserções no navegador |
 | 1440px busca insensível a acentos | PASS | lumiere/Lumière e âmbar |
-| 1440px categorias e URL persistente | PASS | Árabes: 2 produtos; Todos: 6 |
+| 1440px categorias e URL persistente | PASS | Árabes: 2 produtos; Todos: 12 |
 | 1440px filtros combinados de família e preço | PASS | Limite R$350 retorna Fleur de Soie e Soleil Doré |
 | 1440px ordenação | PASS | menor preço, maior preço e nome |
 | 1440px busca vazia e recuperação | PASS | Interações e asserções no navegador |
+| 1440px busca por marcas dos seis perfumes fornecidos | PASS | Interações e asserções no navegador |
+| 1440px seis perfumes: imagens, páginas, preços de prévia e sacola persistente | PASS | Interações e asserções no navegador |
 | 1440px galeria por controles e teclado | PASS | Interações e asserções no navegador |
 | 1440px produto sem atalho de compra por WhatsApp | PASS | Interações e asserções no navegador |
 | 1440px quantidade, subtotal e ausência de WhatsApp na sacola | PASS | Interações e asserções no navegador |

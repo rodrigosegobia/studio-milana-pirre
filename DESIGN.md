@@ -30,7 +30,7 @@ Esta direção substitui a composição editorial anterior, rejeitada pelo usuá
 - A home não tem faixa superior: a foto começa na borda da tela e o cabeçalho é sobreposto. Nas páginas internas, cabeçalho preto e logo branca original, com a faixa demonstrativa existente. Cabeçalho de 72 px no celular e 84 px em desktop.
 - Categorias em uma faixa horizontal; vitrine manual com dois produtos visíveis no celular, três no tablet e quatro no desktop.
 - Hero da home com 100svh, preenchendo a tela de entrada. Texto e CTAs reservam espaço para a barra inferior e a área segura do aparelho.
-- Campanha Nail Design de 260 px no celular, seguida de mensagem institucional curta.
+- Campanha Nail Design com texto sobreposto e banner preto de 280 px no celular, antes da perfumaria; sem o antigo bloco institucional.
 - Barra inferior fixa restaurada no mobile, com Início, Perfumes, Nail Design e Sacola; reservados espaço no rodapé e afastamento para foco e avisos.
 
 ## Identidade e tipografia
@@ -53,10 +53,16 @@ O catálogo abre diretamente em título, categorias, busca e filtros. A fotograf
 
 A faixa de produtos usa rolagem horizontal nativa, snap e teclas de direção, sem contador ou botões de setas. Não há reprodução automática. Ao sair da abertura, a fotografia suaviza e a descoberta ganha nitidez de blur(5px)/opacity .55 até blur(0)/opacity 1. O foco torna o conteúdo nítido; prefers-reduced-motion remove blur/fade. Sem JavaScript, os estilos padrão deixam tudo visível.
 
+O hero apresenta Milana, o serviço fotografado e os seis perfumes fornecidos, nessa ordem. Trocas automáticas a cada 7,5 segundos, com sobreposição em fade de 2 segundos: a imagem anterior permanece opaca até a próxima cobri-la. Não há setas, contagem ou botão de pausa, conforme pedido explícito do usuário. O movimento para fora da tela, em outra aba, durante foco nos links do hero ou preferência de movimento reduzido. Apenas a próxima foto é antecipada e decodificada antes da troca. Em telas largas as fotografias verticais conservam o enquadramento, com texto ao lado; no celular ocupam a abertura inteira. Nail Design vem depois, antes das categorias e da vitrine de perfumes. O banner Nail Design encosta diretamente no hero, sem faixa ou espaçamento. Tem fundo preto em largura total, fotografia servico1.jpeg levemente desfocada e reduzida em opacidade, com título, descrição e links nítidos sobrepostos. Mede 280 px no celular e até 340 px no desktop. O bloco “Dois universos. Uma identidade.” foi removido a pedido do usuário.
+
+“Encontre seu perfume” antecede a faixa de categorias, reunindo título, navegação e vitrine em uma única seção.
+
+A landing de Nail Design usa o retrato fornecido de Milana Pirre e a fotografia servico1.jpeg. O portfólio distingue essa fotografia das duas imagens de inspiração, inclusive na ampliação. A biografia completa permanece pendente, sem inventar trajetória profissional.
+
 CSS e app.js usam identificador de versão nas URLs para impedir a mistura de HTML novo com estilos antigos em cache. Caminhos continuam relativos e compatíveis com GitHub Pages.
 
 ## Conteúdo e limites
 
-Fotos reais por URLs externas com cópias locais de fallback. Produtos e valores fictícios, perfil ainda sem dados oficiais e portfólio identificado como referência. Checkout demonstrativo; sem backend de pedidos/pagamentos nem painel de postagem.
+Fotografias fornecidas pelo usuário são servidas localmente. As referências externas mantêm cópias locais de fallback. Os seis perfumes novos têm nomes e marcas identificados, com valores e volumes demonstrativos aprovados pelo usuário; os itens fictícios anteriores permanecem no catálogo. O perfil já apresenta nome e retrato de Milana. O portfólio identifica separadamente a fotografia do serviço e as imagens de inspiração. Checkout demonstrativo; sem backend de pedidos/pagamentos nem painel de postagem.
 
 Capturas atuais: docs/screenshots/mobile-reset/ e docs/screenshots/scroll-nav/. Testes de gesto e escala: tests/test_mobile.py. Publicação destes ajustes aprovada pelo usuário em 24/11/2026.

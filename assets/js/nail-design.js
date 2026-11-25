@@ -11,13 +11,18 @@
       document.getElementById('profile-image-note').hidden = false;
       document.getElementById('profile-preview-note').hidden = false;
     }, { once:true });
+    picture.width = 2160; picture.height = 3840;
+    if (profile.photo === 'assets/images/milana.jpg') {
+      picture.srcset = 'assets/images/milana-mobile.jpeg 828w, assets/images/milana.jpg 2160w';
+      picture.sizes = '(min-width:1000px) 260px, (min-width:640px) 190px, 80px';
+    }
     picture.src = profile.photo; picture.alt = profile.name || 'Profissional do studio'; picture.loading = 'lazy';
     holder.replaceChildren(picture);
     document.getElementById('profile-image-note').hidden = true;
   }
   if (profile.name && profile.bio && profile.photo) document.getElementById('profile-preview-note').hidden = true;
   document.getElementById('nail-services-list').innerHTML = window.STUDIO_DATA.services.map(service => `<article class="nail-service" aria-labelledby="service-${S.escape(service.id)}"><h3 id="service-${S.escape(service.id)}">${S.escape(service.name)}</h3><p class="nail-service-description">${S.escape(service.description)}</p><details class="service-details"><summary>Sobre o procedimento<span aria-hidden="true">${S.icon('plus')}</span></summary><p>${S.escape(service.detail)}</p></details></article>`).join('');
-  document.getElementById('portfolio-grid').innerHTML = content.portfolio.map((item, index) => `<figure class="portfolio-work"><button class="portfolio-photo" type="button" data-photo="${index}" aria-label="Ampliar: ${S.escape(item.title)}"><img src="${S.escape(item.image)}" alt="${S.escape(item.alt)}" width="1200" height="1600" loading="lazy"><span class="portfolio-enlarge" aria-hidden="true">${S.icon('plus')}</span></button><figcaption><h3>${S.escape(item.title)}</h3><p>${S.escape(item.description)}</p></figcaption></figure>`).join('');
+  document.getElementById('portfolio-grid').innerHTML = content.portfolio.map((item, index) => `<figure class="portfolio-work"><button class="portfolio-photo" type="button" data-photo="${index}" aria-label="Ampliar: ${S.escape(item.title)}"><img src="${S.escape(item.image)}" alt="${S.escape(item.alt)}" width="1200" height="1600" loading="lazy"><span class="portfolio-enlarge" aria-hidden="true">${S.icon('plus')}</span></button><figcaption><h3>${S.escape(item.title)}</h3><p>${S.escape(item.description)}</p><span class="portfolio-origin">${item.reference === false ? "Studio Milana Pirre" : "Imagem de inspiração"}</span></figcaption></figure>`).join('');
   const dialog = document.getElementById('portfolio-dialog');
   dialog.querySelector('[data-close-dialog]').innerHTML = S.icon('close');
   document.querySelectorAll('[data-photo]').forEach(button => button.addEventListener('click', () => {
@@ -25,6 +30,7 @@
     document.getElementById('portfolio-photo-title').textContent = item.title;
     const photo = document.getElementById('portfolio-full-photo'); photo.src = item.image; photo.alt = item.alt;
     document.getElementById('portfolio-photo-description').textContent = item.description;
+    document.getElementById('portfolio-photo-note').textContent = item.reference === false ? 'Studio Milana Pirre · Nail Design' : 'Fotografia de inspiração. Não representa trabalho realizado pelo studio.';
     dialog.showModal();
   }));
 })();

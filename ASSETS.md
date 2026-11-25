@@ -93,3 +93,29 @@ O usuário autorizou explicitamente publicar estes arquivos e utilizá-los como 
 Esses três arquivos já estavam no workspace quando foram selecionados. Seus links originais e créditos não estavam registrados no projeto; não são atribuídos ao Pexels. Os nomes, notas, volumes e preços do conjunto de demonstração não foram convertidos em dados comerciais verificados.
 
 As cópias Pexels anteriormente usadas nos dois primeiros caminhos foram preservadas em reference-amber.jpg e reference-woody.jpg. Para a referência coral, perfume-hero.jpg serve também como fallback, evitando associar os novos frascos aos outros itens do catálogo por erro de rede.
+
+## Perfumes fornecidos para o carrossel e catálogo
+
+Os seis arquivos abaixo foram copiados sem alteração da pasta `J:\Curso\perfumes`. Origem: material fornecido pelo usuário; não são atribuídos ao Pexels nem foram gerados durante esta implementação. As imagens são usadas no hero, catálogo, página de produto, sacola e checkout. Os seis itens anteriores permanecem disponíveis.
+
+| Arquivo em assets/images/perfumes | Produto | Marca |
+| --- | --- | --- |
+| 212-vip-rose-nyc.jpg | 212 VIP Rosé | Carolina Herrera |
+| light-blue-pour-homme.jpg | Light Blue Pour Homme | Dolce & Gabbana |
+| the-one-for-men.jpg | The One for Men | Dolce & Gabbana |
+| stronger-with-you-intensely.jpg | Stronger With You Intensely | Emporio Armani |
+| hacivat.jpg | Hacivat | Nishane |
+| eros-energy.jpg | Eros Energy | Versace |
+
+O usuário aprovou manter preços demonstrativos. Os volumes também representam a configuração da prévia, sem confirmar estoque ou oferta. Nomes e marcas foram conferidos nas imagens. As famílias, concentrações e descrições curtas foram conferidas nas páginas oficiais abaixo; não foi inventada uma pirâmide de notas nem uma classificação de intensidade para esses produtos.
+
+- [212 VIP Rosé — Carolina Herrera](https://www.carolinaherrera.com/us/en/p-fragrance/212-vip-rose)
+- [Light Blue Pour Homme — Dolce & Gabbana](https://www.dolcegabbana.com/en-us/beauty/perfumes-for-him/light-blue-pour-homme/light-blue-pour-homme-eau-de-toilette---VT01CPVT0009V000.html)
+- [The One for Men — Dolce & Gabbana](https://www.dolcegabbana.com/en-us/beauty/perfumes-for-him/the-one-for-men/the-one-for-men-edt-100ml---158057971180509.html)
+- [Stronger With You Intensely — Armani Beauty](https://www.giorgioarmanibeauty-usa.com/fragrances/emporio-armani-stronger-with-you-intensely/3614272225701.html)
+- [Hacivat — Nishane](https://nishane.com/product/hacivat/)
+- [Eros Energy — Versace](https://www.versace.com/us/en/eros-energy-edp-100-ml/R742010-R100MLS.html)
+
+## Retrato e fotografia de serviço fornecidos
+
+Milana.jpg foi copiada sem alteração para assets/images/milana.jpg. A versão Milana.jpeg, também fornecida na pasta original, está em assets/images/milana-mobile.jpeg e é selecionada por srcset para evitar o download da foto de 6,6 MB em telas que não precisam dessa resolução. Ambas são usadas no hero e no perfil. servico1.jpeg foi copiada sem alteração para assets/images/servico1.jpeg e aparece no carrossel, na abertura de Nail Design e no primeiro item do portfólio. Nenhuma imagem foi gerada ou retocada. O banner Nail Design do index também usa servico1.jpeg, com desfoque e escurecimento aplicados apenas por CSS; o arquivo original permanece intacto.

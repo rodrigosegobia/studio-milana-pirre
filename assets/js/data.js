@@ -7,11 +7,17 @@ window.STUDIO_IMAGE_FALLBACKS = {
   "https://images.pexels.com/photos/34941684/pexels-photo-34941684.jpeg?auto=compress&cs=tinysrgb&w=1200": "assets/images/nails-hero.jpg",
   "https://images.pexels.com/photos/13038494/pexels-photo-13038494.jpeg?auto=compress&cs=tinysrgb&w=1200": "assets/images/nails-detail.jpg"
 };
-/* Todos os produtos, preços, notas e tempos abaixo são fictícios e demonstrativos. */
+/* Preços e volumes são demonstrativos. Os itens supplied têm nomes reais e imagens fornecidas pelo cliente. */
 window.STUDIO_DATA = {
   categories: ['Masculinos', 'Femininos', 'Árabes', 'Importados', 'Nicho'],
-  brands: ['Carolina Herrera', 'Rabanne', 'Emporio Armani', 'Dior'],
+  brands: ['Carolina Herrera', 'Dolce & Gabbana', 'Emporio Armani', 'Nishane', 'Versace'],
   products: [
+    { id:'212-vip-rose-nyc', name:'212 VIP Rosé', brand:'Carolina Herrera', collection:'Seleção do studio', family:'Floral frutado amadeirado', categories:['Femininos','Importados'], price:599, volume:80, image:'assets/images/perfumes/212-vip-rose-nyc.jpg', imageFit:'contain', notes:[], description:'Um floral frutado com o brilho do champagne rosé e um fundo de madeiras e almíscar.', concentration:'Eau de parfum', supplied:true, hero:true },
+    { id:'light-blue-pour-homme', name:'Light Blue Pour Homme', brand:'Dolce & Gabbana', collection:'Seleção do studio', family:'Amadeirado aromático', categories:['Masculinos','Importados'], price:499, volume:100, image:'assets/images/perfumes/light-blue-pour-homme.jpg', imageFit:'contain', notes:[], description:'Cítricos, alecrim e patchouli em uma composição de inspiração mediterrânea.', concentration:'Eau de toilette', supplied:true, hero:true },
+    { id:'the-one-for-men', name:'The One for Men', brand:'Dolce & Gabbana', collection:'Seleção do studio', family:'Amadeirado aromático', categories:['Masculinos','Importados'], price:549, volume:100, image:'assets/images/perfumes/the-one-for-men.jpg', imageFit:'contain', notes:[], description:'Manjericão, lavanda e sândalo dão forma a esta composição amadeirada aromática.', concentration:'Eau de toilette', supplied:true, hero:true },
+    { id:'stronger-with-you-intensely', name:'Stronger With You Intensely', brand:'Emporio Armani', collection:'Seleção do studio', family:'Ambarado amadeirado', categories:['Masculinos','Importados'], price:649, volume:100, image:'assets/images/perfumes/stronger-with-you-intensely.jpg', imageFit:'contain', notes:[], description:'Um ambarado amadeirado de caráter quente e especiado.', concentration:'Eau de parfum', supplied:true, hero:true },
+    { id:'hacivat', name:'Hacivat', brand:'Nishane', collection:'Seleção do studio', family:'Chipre cítrico amadeirado', categories:['Femininos','Masculinos','Importados','Nicho'], price:899, volume:50, image:'assets/images/perfumes/hacivat.jpg', imageFit:'contain', notes:[], description:'O encontro de abacaxi e bergamota com madeiras, em uma composição chipre cítrica.', concentration:'Extrait de parfum', supplied:true, hero:true },
+    { id:'eros-energy', name:'Eros Energy', brand:'Versace', collection:'Seleção do studio', family:'Cítrico amadeirado', categories:['Masculinos','Importados'], price:579, volume:100, image:'assets/images/perfumes/eros-energy.jpg', imageFit:'contain', notes:[], description:'Uma abertura de cítricos encontra pimenta rosa, patchouli e musgo de carvalho.', concentration:'Eau de parfum', supplied:true, hero:true },
     { id:'ambre', name:'Ambre Lumière', collection:'Coleção de demonstração', family:'Ambarado floral', categories:['Femininos','Importados'], price:389, compareAt:459, volume:75, image:'assets/images/perfume-ambre.jpg?v=20261124m3', imageFit:'contain', gallery:['assets/images/perfume-ambre.jpg?v=20261124m3'], notes:['Bergamota','Jasmim','Âmbar'], description:'A luminosidade da bergamota encontra um coração floral e a presença acolhedora do âmbar. Uma composição imaginada para acompanhar momentos especiais.', intensity:'Envolvente', concentration:'Eau de parfum' },
     { id:'bois', name:'Bois de Minuit', collection:'Coleção de demonstração', family:'Amadeirado aromático', categories:['Masculinos','Nicho'], price:459, volume:100, image:'assets/images/perfume-bois.jpg?v=20261124m3', imageFit:'contain', gallery:['assets/images/perfume-bois.jpg?v=20261124m3'], notes:['Cardamomo','Cedro','Vetiver'], description:'Madeiras profundas, especiarias sutis e um fundo de vetiver. Uma interpretação imaginária de elegância que permanece na memória.', intensity:'Intenso', concentration:'Eau de parfum' },
     { id:'fleur', name:'Fleur de Soie', collection:'Coleção de demonstração', family:'Floral delicado', categories:['Femininos','Nicho'], price:349, volume:50, image:'assets/images/perfume-fleur.jpg?v=20261124m3', imageFit:'contain', gallery:['assets/images/perfume-fleur.jpg?v=20261124m3'], notes:['Pera','Peônia','Almíscar'], description:'Um floral macio como seda, com saída frutada e um fundo delicado. Um perfume fictício para explorar o lado mais leve da perfumaria.', intensity:'Suave', concentration:'Eau de parfum' },
@@ -21,8 +27,9 @@ window.STUDIO_DATA = {
   ],
   nail: {
     // Preencha apenas com nome, biografia e retrato autorizados da profissional.
-    profile: { name: '', bio: '', photo: '' },
+    profile: { name: 'Milana Pirre', bio: '', photo: 'assets/images/milana.jpg' },
     portfolio: [
+      { title:'Vermelho com brilho', description:'Cor intensa e acabamento luminoso.', image:'assets/images/servico1.jpeg', alt:'Unhas vermelhas com acabamento brilhante', reference:false },
       { title: 'Nude luminoso', description: 'Tons suaves, brilho delicado e um acabamento que valoriza a forma.', image: 'https://images.pexels.com/photos/34941684/pexels-photo-34941684.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Manicure nude com pérolas, fotografia de referência' },
       { title: 'Francesinha delicada', description: 'O contraste sutil de um clássico, visto de perto.', image: 'https://images.pexels.com/photos/13038494/pexels-photo-13038494.jpeg?auto=compress&cs=tinysrgb&w=1200', alt: 'Francesinha em unhas quadradas, fotografia de referência' }
     ]

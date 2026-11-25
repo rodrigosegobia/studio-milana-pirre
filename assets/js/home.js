@@ -17,6 +17,81 @@
   const hero = document.querySelector('.campaign-hero');
   const discovery = document.querySelector('.home-discovery');
   if (!hero || !discovery) return;
+  // Two decoded layers crossfade; the outgoing photo stays opaque until covered.
+  // Load just the next photo, and suspend autoplay offscreen or in another tab.
+  const media = document.getElementById('hero-slides');
+  if (media) {
+    const photos = [{image:'assets/images/milana.jpg', portrait:true}, {image:'assets/images/servico1.jpeg', service:true}]
+      .concat(window.STUDIO_DATA.products.filter(product => product.hero));
+    const slides = [media.firstElementChild];
+    let current = 0, timer = 0, settleTimer = 0, pending = false;
+    let inView = true, focused = false, disposed = false;
+    const delay = 7500, fade = 2000;
+    const canPlay = () => !disposed && !focused && !reduced.matches && !document.hidden && inView;
+    function loadSlide(index) {
+      if (slides[index]) return slides[index];
+      const slide = document.createElement('div'), img = document.createElement('img');
+      slide.className = 'hero-slide' + (photos[index].service ? ' is-service' : '');
+      img.alt = ''; img.decoding = 'async'; img.fetchPriority = 'low';
+      img.width = photos[index].service ? 1175 : 1080;
+      img.height = photos[index].service ? 1200 : 1920;
+      img.src = photos[index].image;
+      slide.append(img); media.append(slide); slides[index] = slide;
+      return slide;
+    }
+    function settle() {
+      clearTimeout(settleTimer);
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('is-active', index === current);
+        slide.classList.remove('is-entering');
+      });
+    }
+    function schedule() {
+      clearTimeout(timer);
+      if (!canPlay() || pending || photos.length < 2) return;
+      loadSlide((current + 1) % photos.length);
+      timer = setTimeout(advance, delay);
+    }
+    async function advance() {
+      if (!canPlay() || pending) return;
+      pending = true;
+      const next = (current + 1) % photos.length;
+      const slide = loadSlide(next);
+      try {
+        await slide.firstElementChild.decode();
+        if (canPlay()) {
+          settle();
+          // Ensure the zero-opacity state has painted before fading in.
+          slide.getBoundingClientRect();
+          slide.classList.add('is-entering', 'is-active');
+          current = next;
+          settleTimer = setTimeout(settle, fade + 50);
+        }
+      } catch (_) {
+        // Keep the last loaded photograph when an image cannot be fetched.
+        photos.splice(next, 1); slides.splice(next, 1); slide.remove();
+        if (next < current) current -= 1;
+      }
+      pending = false;
+      schedule();
+    }
+    hero.addEventListener('focusin', () => { focused = true; schedule(); });
+    hero.addEventListener('focusout', event => {
+      focused = hero.contains(event.relatedTarget);
+      schedule();
+    });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) settle(); schedule(); });
+    reduced.addEventListener('change', () => { settle(); schedule(); });
+    const observer = new IntersectionObserver(entries => {
+      inView = entries[0].isIntersecting;
+      if (!inView) settle();
+      schedule();
+    }, {threshold:0});
+    observer.observe(hero);
+    addEventListener('pagehide', () => { disposed = true; clearTimeout(timer); settle(); });
+    addEventListener('pageshow', () => { disposed = false; schedule(); });
+    schedule();
+  }
   const clamp = value => Math.max(0, Math.min(1, value));
   const ease = value => value * value * (3 - 2 * value);
   let frame = 0;
